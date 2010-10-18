@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/simonradford/!svn/ver/12/trunk/app/SimonRadford.Site/Models
+END
+ClassDiagram.cd
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/simonradford/!svn/ver/7/trunk/app/SimonRadford.Site/Models/ClassDiagram.cd
+END
+Submitter.cs
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/simonradford/!svn/ver/18/trunk/app/SimonRadford.Site/Models/Submitter.cs
+END
+AccountModels.cs
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/simonradford/!svn/ver/18/trunk/app/SimonRadford.Site/Models/AccountModels.cs
+END
+Product.cs
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/simonradford/!svn/ver/19/trunk/app/SimonRadford.Site/Models/Product.cs
+END
+IManafacturerRepository.cs
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/simonradford/!svn/ver/20/trunk/app/SimonRadford.Site/Models/IManafacturerRepository.cs
+END
+Review.cs
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/simonradford/!svn/ver/11/trunk/app/SimonRadford.Site/Models/Review.cs
+END
+ISubmitterRepository.cs
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/simonradford/!svn/ver/19/trunk/app/SimonRadford.Site/Models/ISubmitterRepository.cs
+END
+Manafacturer.cs
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/simonradford/!svn/ver/9/trunk/app/SimonRadford.Site/Models/Manafacturer.cs
+END
+IProductRepository.cs
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/simonradford/!svn/ver/20/trunk/app/SimonRadford.Site/Models/IProductRepository.cs
+END
+IReviewRepository.cs
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/simonradford/!svn/ver/19/trunk/app/SimonRadford.Site/Models/IReviewRepository.cs
+END

@@ -1,0 +1,27 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using SimonRadford.Site.Models;
+using System.ComponentModel.DataAnnotations;
+
+namespace SimonRadford.Site.ViewModels
+{
+    public class ManafacturerListViewModelRow
+    {
+        public ManafacturerListViewModelRow(int manafacturerId, string manafacturerName)
+        {
+            ManafacturerId = manafacturerId;
+            ManafacturerName = manafacturerName;
+        }
+
+        public ManafacturerListViewModelRow()
+        {
+
+        }
+
+        public int ManafacturerId { get; set; }
+        public string ManafacturerName { get; set; }
+
+    }
+}

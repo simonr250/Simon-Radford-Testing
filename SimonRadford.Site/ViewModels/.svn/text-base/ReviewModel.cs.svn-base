@@ -1,0 +1,52 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Web;
+using SimonRadford.Site.Models;
+using System.ComponentModel.DataAnnotations;
+
+namespace SimonRadford.Site.ViewModels
+{
+    public class ReviewModel
+    {
+        public ReviewModel(string name, int rating, string detailedReview, int productId, string productName, string manafacturerName, IList<string> submitterNames, IList<int> ratings, IList<string> detailedReviews)
+        {
+            ProductId = productId;
+            ProductName = productName;
+            SubmitterName = name;
+            Rating = rating;
+            DetailedReview = detailedReview;
+            ManafacturerName = manafacturerName;
+            SubmitterNames = submitterNames;
+            Ratings = ratings;
+            DetailedReviews = detailedReviews;
+
+        }
+
+        public ReviewModel()
+        {
+            // TODO: Complete member initialization
+        }
+        [Required(ErrorMessage = " *** You need to enter a name ***")]
+        [DisplayName("Your name")]
+        public string SubmitterName { get; set; }
+
+        [Required(ErrorMessage = " *** Please enter a rating between 1 and 5 ***")]
+        [Range(1, 5, ErrorMessage = " *** Rating must be between 1 and 5 ***")]
+        public int Rating { get; set; }
+
+        [Required(ErrorMessage = " *** Please enter your review ***")]
+        [DisplayName("Review")]
+        public string DetailedReview { get; set; }
+        public int ProductId { get; set; }
+        public string ProductName { get; set; }
+
+        public string ManafacturerName { get; set; }
+
+        public IList<string> SubmitterNames { get; set; }
+        public IList<int> Ratings { get; set; }
+        public IList<string> DetailedReviews { get; set; }
+
+    }
+}

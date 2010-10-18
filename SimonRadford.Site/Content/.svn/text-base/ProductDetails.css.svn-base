@@ -1,0 +1,14 @@
+﻿
+table th 
+{
+    width: 100px;
+    text-align: center;
+}
+table td
+{
+    border-top-width: 2px;
+    border-right-width: 2px;
+    
+ border-bottom-width: 2px; 
+ width:300;
+}

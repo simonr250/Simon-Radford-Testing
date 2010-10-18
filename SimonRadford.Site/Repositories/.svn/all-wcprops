@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/simonradford/!svn/ver/12/trunk/app/SimonRadford.Site/Repositories
+END
+SubmitterRepository.cs
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/simonradford/!svn/ver/15/trunk/app/SimonRadford.Site/Repositories/SubmitterRepository.cs
+END
+NHibernateHelper.cs
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/simonradford/!svn/ver/19/trunk/app/SimonRadford.Site/Repositories/NHibernateHelper.cs
+END
+ProductRepository.cs
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/simonradford/!svn/ver/20/trunk/app/SimonRadford.Site/Repositories/ProductRepository.cs
+END
+ReviewRepository.cs
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/simonradford/!svn/ver/19/trunk/app/SimonRadford.Site/Repositories/ReviewRepository.cs
+END
+ManafacturerRepository.cs
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/simonradford/!svn/ver/20/trunk/app/SimonRadford.Site/Repositories/ManafacturerRepository.cs
+END

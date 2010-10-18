@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="SimonRadford.Site"
+                   namespace="SimonRadford.Site.Models">
+
+  <class name="Product">
+    <id name="ProductId">
+      <generator class="identity" />
+    </id>
+    <property name ="ManafacturerId"/>
+    <property name ="ManafacturerName"/>
+    <property name="ProductCode" />
+    <property name="Name" />
+    <property name="Price" />
+    <property name="Description" />
+
+    <bag name="Reviews">
+      <key column="ProductID" />
+      <one-to-many
+        class="Review" />
+    </bag>
+    
+  </class>
+
+</hibernate-mapping>

@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimonRadford.Site", "SimonRadford.Site\SimonRadford.Site.csproj", "{A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimonRadford.Tests", "SimonRadford.Tests\SimonRadford.Tests.csproj", "{E9A3D038-9EFB-412F-8D4C-B5B0003F1A05}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2EFC4AFD-53DC-496D-8F65-0743C8470A67}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		SimonRadford.vsmdi = SimonRadford.vsmdi
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = SimonRadford.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9A3D038-9EFB-412F-8D4C-B5B0003F1A05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9A3D038-9EFB-412F-8D4C-B5B0003F1A05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9A3D038-9EFB-412F-8D4C-B5B0003F1A05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9A3D038-9EFB-412F-8D4C-B5B0003F1A05}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

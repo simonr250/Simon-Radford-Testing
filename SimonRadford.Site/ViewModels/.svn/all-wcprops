@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/simonradford/!svn/ver/12/trunk/app/SimonRadford.Site/ViewModels
+END
+ProductViewModel.cs
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/simonradford/!svn/ver/17/trunk/app/SimonRadford.Site/ViewModels/ProductViewModel.cs
+END
+ManafacturerListViewModel.cs
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/simonradford/!svn/ver/20/trunk/app/SimonRadford.Site/ViewModels/ManafacturerListViewModel.cs
+END
+ProductListViewModelRow.cs
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/simonradford/!svn/ver/15/trunk/app/SimonRadford.Site/ViewModels/ProductListViewModelRow.cs
+END
+SubmitReviewViewModel.cs
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/simonradford/!svn/ver/10/trunk/app/SimonRadford.Site/ViewModels/SubmitReviewViewModel.cs
+END
+ReviewModel.cs
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/simonradford/!svn/ver/14/trunk/app/SimonRadford.Site/ViewModels/ReviewModel.cs
+END
+ManafacturerViewModel.cs
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/simonradford/!svn/ver/17/trunk/app/SimonRadford.Site/ViewModels/ManafacturerViewModel.cs
+END
+ProductListViewModel.cs
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/simonradford/!svn/ver/20/trunk/app/SimonRadford.Site/ViewModels/ProductListViewModel.cs
+END
+ManafacturerListViewModelRow.cs
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/simonradford/!svn/ver/16/trunk/app/SimonRadford.Site/ViewModels/ManafacturerListViewModelRow.cs
+END
+ReviewListViewModel.cs
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/simonradford/!svn/ver/10/trunk/app/SimonRadford.Site/ViewModels/ReviewListViewModel.cs
+END
+ReviewRowModel.cs
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/simonradford/!svn/ver/17/trunk/app/SimonRadford.Site/ViewModels/ReviewRowModel.cs
+END

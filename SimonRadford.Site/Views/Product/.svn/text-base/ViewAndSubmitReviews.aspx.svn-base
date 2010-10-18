@@ -1,0 +1,120 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<SimonRadford.Site.ViewModels.ReviewModel>" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
+	Product Reviews
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+
+<script src="/Scripts/MicrosoftAjax.js" type="text/javascript"></script>
+<script src="/Scripts/MicrosoftMvcAjax.js" type="text/javascript"></script>
+<script src="/Scripts/MicrosoftMvcValidation.js" type="text/javascript"></script>
+<script src="/Scripts/jquery.js" type="text/javascript"></script>
+<script src="/Scripts/rating.js" type="text/javascript"></script>
+
+<link href="../../Content/rating.css" rel="stylesheet" type="text/css" />
+
+<script type ="text/javascript">
+	$(document).ready(function () {
+	  
+		$('#rate1').rating('/Home/SubmitReview/2', { maxvalue: 5 });
+		$("table").slideDown(1000, function () {});
+	});
+</script>
+
+    <h2>Reviews for <%:Model.ProductName%> by <%:Model.ManafacturerName%></h2>
+    <p>
+	<%
+	    double avg = 0;%>
+	<%
+	    if (Model.Ratings.Count > 0)%>
+    <%
+     {
+         int total = 0;%>
+    <%
+         for (int i = 0; i < Model.Ratings.Count; i++)%>
+    <%
+         {
+             total = total + Model.Ratings[i];
+         }%>
+       <%
+         avg = total/Model.Ratings.Count;
+     }%>
+    The Average rating for this product is <%:avg%>
+    </p>
+     <p>
+        <a href="#form0">Submit a Review</a>
+    </p>
+       <table>
+        <tr>
+            <th>
+                Reviewed By
+            </th>
+            <th>
+                Rating
+            </th>
+            <th class="reviewDetailColumn">
+                Review
+            </th>
+        </tr>
+
+    <%
+	    for (int i = 0; i < Model.Ratings.Count(); i++)
+     {%>
+    
+        <tr>
+            <td>
+                <%:Model.SubmitterNames[i]%>
+            </td>
+            <td>
+                <%:Model.Ratings[i]%>
+            </td>
+            <td class="reviewDetailColumn">
+                <%:Model.DetailedReviews[i]%>
+            </td>
+        </tr>
+    
+    <%
+     }%>
+
+    </table>
+    <p>
+        <%:Html.ActionLink("Back to product details", "ProductDetails", new {id = Model.ProductId})%>
+    </p>
+
+	<!-- Submit review form begins -->
+
+<%Html.EnableClientValidation();%>
+<%using (Html.BeginForm()){%>
+<%:Html.ValidationSummary(true)%>
+
+<fieldset>
+	<legend>Submit a review for <%:Model.ProductName%></legend>
+	<p>
+		<%:Html.LabelFor(model => model.SubmitterName)%>
+		<%:Html.TextBoxFor(model => model.SubmitterName)%>
+		<%:Html.ValidationMessageFor(model => model.SubmitterName)%>
+	</p>
+
+	<p>
+		<%:Html.LabelFor(model => model.Rating)%>
+		<%:Html.HiddenFor(model => model.Rating)%><%:Html.ValidationMessageFor(model => model.Rating)%>
+	</p>
+	
+	<div id="rate1" class="rating"></div>
+	
+	<p>
+		<%:Html.LabelFor(model => model.DetailedReview)%>
+		<%:Html.ValidationMessageFor(model => model.DetailedReview)%>
+		<%:Html.TextAreaFor(model => model.DetailedReview)%>
+	</p> 
+	
+	<p>
+		<input type="submit" value="Submit your review"  />
+	</p>
+</fieldset>
+
+<%
+}%>
+</asp:Content>
+

@@ -1,0 +1,221 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Models/f:IProductRepository.cs" caret="402" fromTop="13" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/f:GenerateSchema_Fixture.cs" caret="289" fromTop="12" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Mappings/f:Manafacturer.hbm.xml" caret="302" fromTop="7" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Mappings/f:Review.hbm.xml" caret="284" fromTop="7" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Mappings/f:Submitter.hbm.xml" caret="291" fromTop="7" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Mappings/f:Product.hbm.xml" caret="552" fromTop="16" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Models/f:Product.cs" caret="441" fromTop="13" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Models/f:IManafacturerRepository.cs" caret="450" fromTop="13" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Models/f:IReviewRepository.cs" caret="417" fromTop="14" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Shared/d:EditorTemplates/f:ReviewTemplate.ascx" caret="434" fromTop="8" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:ViewModels/f:SubmitReviewViewModel.cs" caret="363" fromTop="12" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:ViewModels/f:ReviewListViewModel.cs" caret="0" fromTop="0" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Repositories/f:ManafacturerRepository.cs" caret="0" fromTop="0" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Repositories/f:ReviewRepository.cs" caret="1213" fromTop="25" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Repositories/f:ProductRepository.cs" caret="1193" fromTop="20" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Models/f:ISubmitterRepository.cs" caret="317" fromTop="11" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Repositories/f:SubmitterRepository.cs" caret="1942" fromTop="51" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Shared/f:Site.Master" caret="406" fromTop="2" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Content/f:Site.css" caret="3790" fromTop="9" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Content/f:ProductDetails.css" caret="263" fromTop="18" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Home/f:Index.aspx" caret="1213" fromTop="36" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Home/f:ProductDetails.aspx" caret="514" fromTop="9" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Content/f:ViewReviews.css" caret="50" fromTop="4" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Models/f:Review.cs" caret="561" fromTop="16" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Models/f:Submitter.cs" caret="422" fromTop="14" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Content/f:SubmitReview.css" caret="193" fromTop="19" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Home/f:ViewReviews.aspx" caret="1761" fromTop="24" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Home/f:SubmitReview.aspx" caret="1183" fromTop="13" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Scripts/f:rating.js" caret="2698" fromTop="27" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Controllers/f:HomeController.cs" caret="2437" fromTop="6" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Home/f:ViewReviews.aspx" caret="803" fromTop="17" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Content/f:ProductDetails.css" caret="292" fromTop="19" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Home/f:ViewReviews.aspx" caret="1152" fromTop="12" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Home/f:ProductDetails.aspx" caret="450" fromTop="6" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Home/f:ViewReviews.aspx" caret="398" fromTop="6" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Home/f:ViewReviews.aspx" caret="1507" fromTop="17" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Content/f:ViewReviews.css" caret="45" fromTop="2" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Content/f:SubmitReview.css" caret="47" fromTop="5" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Models/f:Review.cs" caret="561" fromTop="16" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Models/f:Submitter.cs" caret="422" fromTop="14" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Home/f:SubmitReview.aspx" caret="2145" fromTop="25" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Home/f:ViewReviews.aspx" caret="1746" fromTop="23" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Home/f:SubmitReview.aspx" caret="1587" fromTop="10" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Home/f:SubmitReview.aspx" caret="1989" fromTop="17" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Home/f:SubmitReview.aspx" caret="1039" fromTop="11" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Home/f:SubmitReview.aspx" caret="889" fromTop="9" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Home/f:SubmitReview.aspx" caret="1037" fromTop="17" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Home/f:SubmitReview.aspx" caret="626" fromTop="10" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Home/f:SubmitReview.aspx" caret="1414" fromTop="9" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Content/f:SubmitReview.css" caret="193" fromTop="19" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Scripts/f:rating.js" caret="4442" fromTop="19" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Controllers/f:HomeController.cs" caret="2411" fromTop="4" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Home/f:SubmitReview.aspx" caret="2340" fromTop="25" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Scripts/f:rating.js" caret="0" fromTop="0" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Home/f:SubmitReview.aspx" caret="999" fromTop="8" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Scripts/f:rating.js" caret="4442" fromTop="13" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Home/f:SubmitReview.aspx" caret="1697" fromTop="25" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Scripts/f:rating.js" caret="2362" fromTop="19" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Scripts/f:rating.js" caret="3630" fromTop="30" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Scripts/f:rating.js" caret="2698" fromTop="27" />
+    </RecentEdits>
+  </RecentFiles>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir IsNull="False">
+    </NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Qualified:@SimonRadford.Site.Repositories.NHibernateHelper">
+      <Item value="OpenSession`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Default">
+      <Item value="Server" priority="0" />
+      <Item value="Configure`0" priority="0" />
+      <Item value="mapPath" priority="0" />
+      <Item value="products" priority="1" />
+      <Item value="int" priority="8" />
+      <Item value="var" priority="3" />
+      <Item value="public" priority="8" />
+      <Item value="ActionResult`0" priority="2" />
+      <Item value="productRepository" priority="7" />
+      <Item value="productId" priority="5" />
+      <Item value="IReviewRepository`0" priority="2" />
+      <Item value="new" priority="12" />
+      <Item value="reviewRepository" priority="2" />
+      <Item value="return" priority="1" />
+      <Item value="View`0" priority="1" />
+      <Item value="reviews" priority="0" />
+      <Item value="List" priority="1" />
+      <Item value="using" priority="0" />
+      <Item value="SimonRadford.Site" priority="0" />
+      <Item value="Models" priority="0" />
+      <Item value="Product`0" priority="3" />
+      <Item value="Product" priority="2" />
+      <Item value="Manafacturer`0" priority="7" />
+      <Item value="Submitter`0" priority="10" />
+      <Item value="ViewModels" priority="0" />
+      <Item value="ReviewListViewModel`0" priority="1" />
+      <Item value="Reviews" priority="0" />
+      <Item value="Manafacturer" priority="1" />
+      <Item value="ManafacturerRepository`0" priority="0" />
+      <Item value="ManafacturerRepository" priority="0" />
+      <Item value="SubmitterRepository`0" priority="2" />
+      <Item value="manafacturerRepository" priority="1" />
+      <Item value="ReviewRepository`0" priority="0" />
+      <Item value="product" priority="2" />
+      <Item value="Review`0" priority="5" />
+      <Item value="Submitters" priority="0" />
+      <Item value="IList" priority="2" />
+      <Item value="submitterRepository" priority="4" />
+      <Item value="List&lt;Submitter&gt;" priority="0" />
+      <Item value="foreach" priority="1" />
+      <Item value="submittersList" priority="0" />
+      <Item value="r" priority="0" />
+      <Item value="Model" priority="18" />
+      <Item value="item" priority="4" />
+      <Item value="i" priority="3" />
+      <Item value="SubmitReivewListViewModel`0" priority="0" />
+      <Item value="Review" priority="1" />
+      <Item value="Submitter" priority="1" />
+      <Item value="submitReviewViewModel" priority="0" />
+      <Item value="submitter" priority="2" />
+      <Item value="review" priority="5" />
+      <Item value="ProductId" priority="0" />
+      <Item value="if" priority="1" />
+      <Item value="for" priority="1" />
+      <Item value="in" priority="0" />
+      <Item value="s" priority="1" />
+      <Item value="else" priority="0" />
+      <Item value="bool" priority="0" />
+      <Item value="false" priority="0" />
+      <Item value="userFound" priority="1" />
+      <Item value="true" priority="0" />
+      <Item value="ModelBinderAttribute`0" priority="1" />
+      <Item value="double" priority="1" />
+      <Item value="total" priority="2" />
+      <Item value="avg" priority="0" />
+      <Item value="Required" priority="0" />
+      <Item value="ErrorMessage" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.HttpServerUtility">
+      <Item value="MapPath`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.IList`1">
+      <Item value="Add`0" priority="1" />
+      <Item value="Count" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:SimonRadford.Site.Models.Product">
+      <Item value="ManafacturerName" priority="0" />
+      <Item value="ProductId" priority="6" />
+      <Item value="ManafacturerId" priority="4" />
+      <Item value="Name" priority="3" />
+      <Item value="ProductCode" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:SimonRadford.Site.Repositories.ProductRepository">
+      <Item value="GetByProductId`0" priority="5" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:SimonRadford.Site.Repositories.ReviewRepository">
+      <Item value="GetById`0" priority="0" />
+      <Item value="List`0" priority="1" />
+      <Item value="Add`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:SimonRadford.Site.Repositories.ManafacturerRepository">
+      <Item value="GetByManafacturerId`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:SimonRadford.Site.Repositories.SubmitterRepository">
+      <Item value="GetByUserId`0" priority="1" />
+      <Item value="Add`0" priority="0" />
+      <Item value="GetByName`0" priority="0" />
+      <Item value="List`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:SimonRadford.Site.Models.Review">
+      <Item value="UserId" priority="3" />
+      <Item value="Rating" priority="4" />
+      <Item value="Detail" priority="1" />
+      <Item value="ProductId" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:SimonRadford.Site.ViewModels.ReviewListViewModel">
+      <Item value="Reviews" priority="7" />
+      <Item value="Submitters" priority="1" />
+      <Item value="Product" priority="2" />
+      <Item value="Manafacturer" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:SimonRadford.Site.Models.Submitter">
+      <Item value="Name" priority="4" />
+      <Item value="UserId" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:SimonRadford.Site.Models.Manafacturer">
+      <Item value="Name" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:SimonRadford.Site.ViewModels.SubmitReivewListViewModel">
+      <Item value="Submitter" priority="0" />
+      <Item value="Review" priority="3" />
+      <Item value="Product" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Int32">
+      <Item value="ToString`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.Mvc.HtmlHelper`1">
+      <Item value="TextAreaFor`2" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+</Configuration>
