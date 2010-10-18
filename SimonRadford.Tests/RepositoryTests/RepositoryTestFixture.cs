@@ -1,6 +1,4 @@
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using NHibernate;
 using SimonRadford.Site.Models;
@@ -10,7 +8,7 @@ using NUnit.Framework;
 using SimonRadford.Site.Repositories;
 
 
-namespace ProductReviewTestProject
+namespace SimonRadford.Tests.RepositoryTests
 {
     [TestFixture]
     public class RepositoryTestFixture

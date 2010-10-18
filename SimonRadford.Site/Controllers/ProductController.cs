@@ -85,34 +85,6 @@ namespace SimonRadford.Site.Controllers
            
         }
 
-        public ActionResult CreateProduct()
-        {
-            var productViewModel = new ProductViewModel
-                                       {
-                                           ManafacturerNames = _manafacturerRepository.DistinctNamesList()
-                                       };
-            return View(productViewModel);
-        }
-
-        [HttpPost]
-        public ActionResult CreateProduct(ProductViewModel model)
-        {
-            var newProduct = new Product
-                                 {
-                                     ProductCode = model.ProductCode,
-                                     Name = model.ProductName,
-                                     Price = model.Price,
-                                     Description = model.Description,
-                                    ManafacturerId = _manafacturerRepository.CheckExistingNamesAdd(model.ManafacturerName)
-                                 };
-
-                _productRepository.Add(newProduct);
-
-                return Redirect("/");
-            
-         
-        }
-
         public ActionResult Index(GridSortOptions sort, int? page)
         {
             var products = _productRepository.List();

@@ -11,7 +11,7 @@ using SimonRadford.Site.Controllers;
 using SimonRadford.Site.ViewModels;
 using MvcContrib.UI.Grid;
 
-namespace ProductReviewTestProject.ControllerTests
+namespace SimonRadford.Tests.ControllerTests
 {
     [TestFixture]
     class ProductControllerTestFixture
@@ -137,48 +137,6 @@ namespace ProductReviewTestProject.ControllerTests
             {
                 Assert.AreEqual("/Product/ProductDetails/1", result.Url);
             }
-        }
-
-        [Test]
-        public void TestCreateProductView()
-        {
-            var productController = new ProductController(_manafacturerRepository, _productRepository, _reviewRepository, _submitterRepository);
-            var result = productController.CreateProduct() as ViewResult;
-            if (result != null)
-            {
-                var createProductResult = (ProductViewModel) result.ViewData.Model;
-                Assert.AreEqual(0, createProductResult.ProductId);
-                Assert.IsNullOrEmpty(createProductResult.ProductCode);
-                Assert.IsNullOrEmpty(createProductResult.ProductName);
-                Assert.IsNullOrEmpty(createProductResult.Description);
-                Assert.AreEqual(0, createProductResult.Price);
-                Assert.AreEqual(0, createProductResult.AverageRating);
-                Assert.AreEqual(0, createProductResult.TotalReviewRows);
-                Assert.AreEqual("TestManafacturer 1", createProductResult.ManafacturerNames[0]);
-                Assert.AreEqual("TestManafacturer 2", createProductResult.ManafacturerNames[1]);
-                Assert.AreEqual("TestManafacturer 3", createProductResult.ManafacturerNames[2]);
-                Assert.AreEqual("TestManafacturer 4", createProductResult.ManafacturerNames[3]);
-                Assert.AreEqual("TestManafacturer 5", createProductResult.ManafacturerNames[4]);
-            }
-        }
-
-        [Test]
-        public void TestCreateProductSubmit()
-        {
-            var productController = new ProductController(_manafacturerRepository, _productRepository, _reviewRepository, _submitterRepository);
-            var result = (RedirectResult) productController.CreateProduct(new ProductViewModel
-                                                             {
-                                                              ProductCode = "Test106",
-                                                              ProductName = "TestProduct106",
-                                                              Description = "Testing product 6",
-                                                              Price = 106,
-                                                              ManafacturerName = "TestManafacturer 1"
-                                                             });
-            if (result != null)
-            {
-                Assert.AreEqual("/", result.Url);
-            }
-            
         }
 
         [Test]

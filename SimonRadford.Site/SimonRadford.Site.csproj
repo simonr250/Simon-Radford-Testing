@@ -37,7 +37,7 @@
     <Compile Include="Controllers\AccountController.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controllers\ManafacturerController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ProductController.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -79,6 +79,7 @@
     <EmbeddedResource Include="Mappings\Product.hbm.xml" />
     <Content Include="hibernate.cfg.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <EmbeddedResource Include="Mappings\Manafacturer.hbm.xml">
       <SubType>Designer</SubType>
@@ -91,12 +92,14 @@
     <Content Include="Scripts\jquery.infinitescroll.js" />
     <Content Include="Scripts\jquery.js" />
     <Content Include="Scripts\rating.js" />
-    <Content Include="Views\Manafacturer\AddNewManafacturer.aspx" />
-    <Content Include="Views\Product\CreateProduct.aspx" />
+    <Content Include="Views\Admin\AddNewManafacturer.aspx" />
+    <Content Include="Views\Admin\CreateProduct.aspx" />
+    <Content Include="Views\Admin\EditManafacturer.aspx" />
+    <Content Include="Views\Admin\EditProduct.aspx" />
     <Content Include="Views\Product\Index.aspx" />
-    <Content Include="Views\Manafacturer\Index.aspx" />
+    <Content Include="Views\Admin\Index.aspx" />
     <Content Include="Views\Product\ProductDetails.aspx" />
-    <Content Include="Views\Manafacturer\ViewManafacturer.aspx" />
+    <Content Include="Views\Admin\ViewManafacturer.aspx" />
     <Content Include="Views\Shared\EditorTemplates\ReviewTemplate.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

@@ -35,9 +35,7 @@
 	});
 </script>
     <h2>Product List</h2>
-    <p>
-        <%: Html.ActionLink("Enter New Product for Review", "CreateProduct") %>
-    </p>
+    
 	<% using(Html.BeginForm(new { Action = "Index"})) { %> 
 	<%: Html.TextBox("SearchWord") %> 
 	<input type="submit" value="Search"/>

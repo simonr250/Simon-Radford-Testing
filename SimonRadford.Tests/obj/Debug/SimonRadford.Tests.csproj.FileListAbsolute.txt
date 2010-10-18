@@ -32,8 +32,6 @@ C:\Development\SimonsFirstProject\trunk\ProductReviewTestProject\bin\Debug\Castl
 C:\Development\SimonsFirstProject\trunk\ProductReviewTestProject\bin\Debug\Castle.Services.Transaction.xml
 C:\Development\SimonsFirstProject\trunk\ProductReviewTestProject\bin\Debug\Castle.Core.dll
 C:\Development\SimonsFirstProject\trunk\ProductReviewTestProject\bin\Debug\Castle.Core.xml
-C:\Development\SimonsFirstProjectRefined\SimonRadford.Tests\bin\Debug\ProductReviewTestProject.dll
-C:\Development\SimonsFirstProjectRefined\SimonRadford.Tests\bin\Debug\ProductReviewTestProject.pdb
 C:\Development\SimonsFirstProjectRefined\SimonRadford.Tests\bin\Debug\Castle.MicroKernel.dll
 C:\Development\SimonsFirstProjectRefined\SimonRadford.Tests\bin\Debug\Castle.DynamicProxy2.dll
 C:\Development\SimonsFirstProjectRefined\SimonRadford.Tests\bin\Debug\Microsoft.Web.Mvc.dll
@@ -58,5 +56,9 @@ C:\Development\SimonsFirstProjectRefined\SimonRadford.Tests\bin\Debug\Iesi.Colle
 C:\Development\SimonsFirstProjectRefined\SimonRadford.Tests\bin\Debug\log4net.xml
 C:\Development\SimonsFirstProjectRefined\SimonRadford.Tests\bin\Debug\Microsoft.Practices.ServiceLocation.xml
 C:\Development\SimonsFirstProjectRefined\SimonRadford.Tests\obj\Debug\ResolveAssemblyReference.cache
-C:\Development\SimonsFirstProjectRefined\SimonRadford.Tests\obj\Debug\ProductReviewTestProject.dll
-C:\Development\SimonsFirstProjectRefined\SimonRadford.Tests\obj\Debug\ProductReviewTestProject.pdb
+C:\Development\SimonsFirstProjectRefined\SimonRadford.Tests\bin\Debug\SimonRadford.Site.dll
+C:\Development\SimonsFirstProjectRefined\SimonRadford.Tests\bin\Debug\hibernate.cfg.xml
+C:\Development\SimonsFirstProjectRefined\SimonRadford.Tests\bin\Debug\SimonRadford.Tests.dll
+C:\Development\SimonsFirstProjectRefined\SimonRadford.Tests\bin\Debug\SimonRadford.Tests.pdb
+C:\Development\SimonsFirstProjectRefined\SimonRadford.Tests\obj\Debug\SimonRadford.Tests.dll
+C:\Development\SimonsFirstProjectRefined\SimonRadford.Tests\obj\Debug\SimonRadford.Tests.pdb

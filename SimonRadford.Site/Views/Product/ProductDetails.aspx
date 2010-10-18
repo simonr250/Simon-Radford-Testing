@@ -36,8 +36,9 @@
    			itemSelector: "table tr.gridrow, table tr.gridrow_alternate",
    			// selector for all items you'll retrieve
    			donetext: "All reviews displayed",
+			loadingText: "Loading reviews...",
 			animate: true,
-			extraScrollPx:100
+			extraScrollPx:150
    		});
 
    		$('#rate1').rating('/Home/SubmitReview/2', { maxvalue: 5 });
