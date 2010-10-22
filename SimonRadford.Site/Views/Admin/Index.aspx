@@ -12,16 +12,29 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
+<script src="/Scripts/MicrosoftAjax.js" type="text/javascript"></script>
+<script src="/Scripts/MicrosoftMvcAjax.js" type="text/javascript"></script>
 <script src="/Scripts/jquery-1.4.1.js" type="text/javascript"></script>
 <script src="/Scripts/jquery.infinitescroll.js" type="text/javascript"></script>
-<script type="text/javascript">
-	var $jq14 = jQuery.noConflict();
-</script>
+<script src ="/Scripts/jquery.mvcajax.js" type="text/javascript"></script>
+<script type ="text/javascript" >
+	$(document).ready(function () {
+		var searchWord = '<%:Model.SearchWord%>';
+		$("#manafacturer_grid").mvcajax("/Admin/SortManafacturerList/", "ManafacturerGrid", searchWord, {
+			defaultsort: "ManafacturerName"
+		});
+	});
 
-    <h2>Manafacturers</h2>
+	function DeleteRefreshGrid() {
+		var searchWord = '<%:Model.SearchWord %>';
+		UpdateGrid('#manafacturer_grid', '/Admin/SortManafacturerList/', 'ManafacturerGrid', 'ManafacturerName', 1, searchWord);
+	}
+</script>
+	<h3><%:Html.ActionLink("Manage reviews", "Index")%> </h3>
+    <h2>Manage manafacturers and products</h2> 
 
     <p>
-        <%: Html.ActionLink("Add a new Manafacturer", "AddNewManafacturer") %>
+        <%: Html.ActionLink("Add a new Manafacturer", "AddNewManafacturer") %>, or click on a manafacturer name to edit and manage products
     </p>
 
 	<% using(Html.BeginForm(new { Action = "Index"})) { %> 
@@ -36,17 +49,15 @@
 	<p>Search results for "<%:Model.SearchWord%>"</p><%
     }%>
 
-	<%: Html.Grid<ManafacturerListViewModelRow>("ManafacturerListRows").Sort(ViewData["sort"] as GridSortOptions).Columns(column => column.For(man => Html.ActionLink(man.ManafacturerName, "ViewManafacturer", new { id = man.ManafacturerId }))
-	.Named("Manafacturer Name").SortColumnName("ManafacturerName"))%>
-<%= Html.Pager((IPagination)Model.ManafacturerListRows)%>
-
+<div id="manafacturer_grid">
+    </div>
 
 	<script type="text/javascript">
-		$jq14("tr").mouseover(function () {
-			$jq14(this).css("background-color", "#CCCCCC");
+		$("tr").mouseover(function () {
+			$(this).css("background-color", "#CCCCCC");
 		});
-		$jq14("tr").mouseleave(function () {
-			$jq14(this).css("background-color", "white");
+		$("tr").mouseleave(function () {
+			$(this).css("background-color", "white");
 
 		});
 	</script>

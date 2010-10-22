@@ -60,7 +60,7 @@
     <% } %>
 
     <div>
-        <%: Html.ActionLink("Cancel", "Index") %>
+        <%: Html.ActionLink("Cancel", "ViewManafacturer", new {id = Model.ManafacturerId}) %>
     </div>
 
 </asp:Content>

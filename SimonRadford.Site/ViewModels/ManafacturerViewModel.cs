@@ -33,7 +33,7 @@ namespace SimonRadford.Site.ViewModels
         public string ManafacturerWebsite { get; set; }
 
         public IEnumerable<ProductListViewModelRow> ProductListRows { get; set; }
-        
 
+        public string SearchWord { get; set; }
     }
 }

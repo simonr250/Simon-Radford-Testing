@@ -10,6 +10,7 @@ using SimonRadford.Site.Repositories;
 using SimonRadford.Site.Controllers;
 using SimonRadford.Site.ViewModels;
 using MvcContrib.UI.Grid;
+using MvcContrib.Pagination;
 
 namespace SimonRadford.Tests.ControllerTests
 {
@@ -143,18 +144,63 @@ namespace SimonRadford.Tests.ControllerTests
         public void TestProductListView()
         {
             var productController = new ProductController(_manafacturerRepository, _productRepository, _reviewRepository, _submitterRepository);
-            var result = productController.Index(new GridSortOptions(), 1) as ViewResult;
+            var result = productController.Index() as ViewResult;
             if (result != null)
             {
-                var productListResult = (ProductListViewModel) result.ViewData.Model;
-                Assert.AreEqual(5, productListResult.ProductListRows.Count());
+                Assert.AreEqual(0, result.ViewData.Count);
+            }
+        }
 
-                Assert.IsTrue(IsInProductCollection(_products[0], productListResult.ProductListRows));
-                Assert.IsTrue(IsInProductCollection(_products[1], productListResult.ProductListRows));
-                Assert.IsTrue(IsInProductCollection(_products[2], productListResult.ProductListRows));
-                Assert.IsTrue(IsInProductCollection(_products[3], productListResult.ProductListRows));
-                Assert.IsTrue(IsInProductCollection(_products[4], productListResult.ProductListRows));
+        [Test]
+        public void TestProductListSearchView()
+        {
+            var productController = new ProductController(_manafacturerRepository, _productRepository, _reviewRepository, _submitterRepository);
+            var result = productController.Index("101") as ViewResult;
+            if (result != null)
+            {
+                var productSearchResult = (ProductListViewModel)result.ViewData.Model;
+                Assert.AreEqual("101", productSearchResult.SearchWord);
+            }
+        }
 
+        [Test]
+        public void TestProductSortSearch()
+        {
+            var productController = new ProductController(_manafacturerRepository, _productRepository, _reviewRepository, _submitterRepository);
+            var result = productController.Sort("ProductCode", 1, "#product_grid", "product/sort/" , "ASC", "ProductGrid", "101" )as ViewResult;
+            if (result != null)
+            {
+                var productSearchResult = (IPagination<ProductListViewModelRow>)result.ViewData["ProductListRows"];
+                Assert.AreEqual(1, productSearchResult.Count());
+                Assert.AreEqual("Test101", productSearchResult.ElementAt(0).ProductCode);
+            }
+        }
+
+        [Test]
+        public void TestProductSortSearchAsc()
+        {
+            var productController = new ProductController(_manafacturerRepository, _productRepository, _reviewRepository, _submitterRepository);
+            var result = productController.Sort("ProductCode", 1, "#product_grid", "product/sort/", "ASC", "ProductGrid", "Test") as ViewResult;
+            if (result != null)
+            {
+                var productSearchResult = (IPagination<ProductListViewModelRow>)result.ViewData["ProductListRows"];
+                Assert.AreEqual(5, productSearchResult.Count());
+                Assert.AreEqual("Test101", productSearchResult.ElementAt(0).ProductCode);
+                Assert.AreEqual("Test105", productSearchResult.ElementAt(4).ProductCode);
+            }
+        }
+
+        [Test]
+        public void TestProductSortSearchDesc()
+        {
+            var productController = new ProductController(_manafacturerRepository, _productRepository, _reviewRepository, _submitterRepository);
+            var result = productController.Sort("ProductCode", 1, "#product_grid", "product/sort/", "DESC", "ProductGrid", "Test") as ViewResult;
+            if (result != null)
+            {
+                var productSearchResult = (IPagination<ProductListViewModelRow>)result.ViewData["ProductListRows"];
+                Assert.AreEqual(5, productSearchResult.Count());
+                Assert.AreEqual("Test101", productSearchResult.ElementAt(4).ProductCode);
+                Assert.AreEqual("Test105", productSearchResult.ElementAt(0).ProductCode);
             }
         }
 

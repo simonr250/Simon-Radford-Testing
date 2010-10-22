@@ -28,5 +28,7 @@ namespace SimonRadford.Site.ViewModels
         [DisplayName("Review")]
         public string DetailedReview { get; set; }
 
+        public int Id { get; set; }
+        public bool Flagged { get; set; }
     }
 }

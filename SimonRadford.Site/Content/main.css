@@ -64,7 +64,7 @@ h5{
 	margin-bottom:0.1em;
 }
 
-p, td, th{
+p, td, th, label{
 	font-size:0.8em;
 	color:#555;
 	margin-bottom: 1.15em;

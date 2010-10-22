@@ -36,13 +36,19 @@
    			itemSelector: "table tr.gridrow, table tr.gridrow_alternate",
    			// selector for all items you'll retrieve
    			donetext: "All reviews displayed",
-			loadingText: "Loading reviews...",
-			animate: true,
-			extraScrollPx:150
+   			loadingText: "Loading reviews...",
+   			animate: true,
+   			extraScrollPx: 150
    		});
 
    		$('#rate1').rating('/Home/SubmitReview/2', { maxvalue: 5 });
    		// $("table").slideDown(1000, function () { });
+
+   		$jq14("tr:contains('1'):contains('Report this review')").css("background-color", "#CC3333")
+   		$jq14("tr:contains('2'):contains('Report this review')").css("background-color", "#FF9966")
+   		$jq14("tr:contains('3'):contains('Report this review')").css("background-color", "#FFFF66")
+   		$jq14("tr:contains('4'):contains('Report this review')").css("background-color", "#99FF99")
+   		$jq14("tr:contains('5'):contains('Report this review')").css("background-color", "#66CC66")
    	});   
 	 </script>
  
@@ -92,6 +98,7 @@
           column.For(rev => rev.SubmitterName).Named("Name").SortColumnName("SubmitterName");
 		  column.For(rev => rev.Rating);
 		  column.For(rev => rev.DetailedReview).Named("Review").SortColumnName("DetailedReview");
+		  column.For(rev => Ajax.ActionLink("Report this review", "FlagReview", new { rev.Id }, new AjaxOptions())).Named("");
 	})%>
 	<%= Html.Pager((IPagination)Model.ReviewRows)%>
 	</div>

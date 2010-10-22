@@ -1,4 +1,5 @@
 <Modules>
   <Module PersistentId="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2" ModuleId="SimonRadford.Site" />
   <Module PersistentId="E9A3D038-9EFB-412F-8D4C-B5B0003F1A05" ModuleId="SimonRadford.Tests" />
+  <Module PersistentId="MvcContribJquery, Version=1.0.0.0, Culture=neutral" ModuleId="MvcContribJquery" />
 </Modules>

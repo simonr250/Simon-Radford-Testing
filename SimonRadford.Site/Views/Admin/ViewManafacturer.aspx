@@ -10,21 +10,35 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<script src="/Scripts/jquery.js" type="text/javascript"></script>
-
-<!--
-<script type ="text/javascript">
+<script src="/Scripts/MicrosoftAjax.js" type="text/javascript"></script>
+<script src="/Scripts/MicrosoftMvcAjax.js" type="text/javascript"></script>
+<script src="/Scripts/jquery-1.4.1.js" type="text/javascript"></script>
+<script src ="/Scripts/jquery.mvcajax.js" type="text/javascript"></script>
+<script type ="text/javascript" >
 	$(document).ready(function () {
-		$("table").slideDown(1000, function () { });
+
+		var searchWord = '<%:Model.SearchWord%>';
+		var id = '<%:Model.ManafacturerId%>';
+
+		$("#product_grid").mvcajaxManafacturerView("/Admin/SortProductList/", "ProductGrid", searchWord, id, {
+			defaultsort: "ProductCode"
+		});
 	});
-</script> -->
+
+	function DeleteRefreshGrid() {
+		var manafacturerId = '<%:Model.ManafacturerId %>';
+		var searchWord = '<%:Model.SearchWord %>';
+		UpdateGridManafacturerView('#product_grid', '/Admin/SortProductList/', 'ProductGrid','ProductCode', 1, searchWord, manafacturerId);
+	}
+	
+</script>
 
     <h2>Manafacturer Details</h2>
 
 	<p>
 	<%: Html.ActionLink( "Edit manafacturer's details", "EditManafacturer", new {id = Model.ManafacturerId}) %>
 	</p>
-
+	<% using(Html.BeginForm(new { Action = "ViewManafacturer"})) { %> 
     <table>
         <tr>
             <th>
@@ -43,6 +57,8 @@
             </td>
         </tr>
 		</table>
+
+		<%: Html.HiddenFor(model => model.ManafacturerId) %>
     
 	<p>Product List for <%: Model.ManafacturerName %></p>
 	
@@ -50,16 +66,24 @@
 	<%: Html.ActionLink("Add a new product", "CreateProduct", new {id= Model.ManafacturerId}) %> , or click on a product name to edit.
 	</p>
 
-	<%: Html.Grid<ProductListViewModelRow>("ProductListRows").Sort(ViewData["sort"] as GridSortOptions).Columns(column =>
-{
-          column.For(prod => prod.ProductCode).Named("Product Code").SortColumnName("ProductCode");
-		  column.For(prod => Html.ActionLink(prod.ProductName, "EditProduct", new { id = prod.Id })).Named("Name").SortColumnName("ProductName");
-		  column.For(prod => "£"+prod.Price).Named("Price").SortColumnName("Price");
-	})%>
-<%= Html.Pager((IPagination)Model.ProductListRows)%>
+		
+	<%: Html.TextBox("SearchWord") %> 
+	<input type="submit" value="Search Product List"/>
+	<% } %> 
+	
+	<br />
+
+	<% if (Model.SearchWord != null)
+    {%>
+	<p>Search results for "<%:Model.SearchWord%>"</p><%
+    }%>
+	
+	<div id="product_grid">
+    </div>
+
 
     <p>
-        <%: Html.ActionLink("Back to manafacturers List", "Index") %>
+        <%: Html.ActionLink("Back to manafacturers List", "Index", new {id = Model.ManafacturerId}) %>
     </p>
 
 </asp:Content>

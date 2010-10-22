@@ -45,6 +45,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="HtmlHelpers\HtmlHelperExtensions.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\IManafacturerRepository.cs" />
     <Compile Include="Models\IProductRepository.cs" />
@@ -70,6 +71,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\delete.gif" />
+    <Content Include="Content\GridImg\ajax-loader.gif" />
+    <Content Include="Content\GridImg\ASC.gif" />
+    <Content Include="Content\GridImg\DESC.gif" />
+    <Content Include="Content\Icon_delete.gif" />
     <Content Include="Content\main.css" />
     <Content Include="Content\PRLogo1.gif" />
     <Content Include="Content\ProductDetails.css" />
@@ -91,15 +96,19 @@
     <Content Include="Scripts\jquery.dataTables.min.js" />
     <Content Include="Scripts\jquery.infinitescroll.js" />
     <Content Include="Scripts\jquery.js" />
+    <Content Include="Scripts\jquery.mvcajax.js" />
     <Content Include="Scripts\rating.js" />
     <Content Include="Views\Admin\AddNewManafacturer.aspx" />
     <Content Include="Views\Admin\CreateProduct.aspx" />
     <Content Include="Views\Admin\EditManafacturer.aspx" />
     <Content Include="Views\Admin\EditProduct.aspx" />
+    <Content Include="Views\Admin\ManafacturerGrid.ascx" />
+    <Content Include="Views\Admin\ProductGrid.ascx" />
     <Content Include="Views\Product\Index.aspx" />
     <Content Include="Views\Admin\Index.aspx" />
     <Content Include="Views\Product\ProductDetails.aspx" />
     <Content Include="Views\Admin\ViewManafacturer.aspx" />
+    <Content Include="Views\Product\ProductGrid.ascx" />
     <Content Include="Views\Shared\EditorTemplates\ReviewTemplate.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -183,10 +192,12 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Data.Linq">
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

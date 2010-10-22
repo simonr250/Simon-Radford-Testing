@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using SimonRadford.Site.Models;
@@ -7,6 +8,7 @@ using SimonRadford.Site.ViewModels;
 using MvcContrib.Sorting;
 using MvcContrib.Pagination;
 using MvcContrib.UI.Grid;
+using SortDirection = MvcContrib.Sorting.SortDirection;
 
 namespace SimonRadford.Site.Controllers
 {
@@ -46,7 +48,9 @@ namespace SimonRadford.Site.Controllers
                                                             SubmitterName =
                                                                 _submitterRepository.GetByUserId(r.UserId).Name,
                                                             DetailedReview = r.Detail,
-                                                            Rating = r.Rating
+                                                            Rating = r.Rating,
+                                                            Id = r.Id,
+                                                            Flagged = r.Flagged
                                                         }).ToList();
             }
             IEnumerable<ReviewRowModel> orderedEnumerable = reviewRowList.OrderBy(r => r.SubmitterName);
@@ -85,65 +89,81 @@ namespace SimonRadford.Site.Controllers
            
         }
 
-        public ActionResult Index(GridSortOptions sort, int? page)
+        public ActionResult Index()
         {
-            var products = _productRepository.List();
-
-            ViewData["sort"] = sort;
-
-            var productRowList = products.Select(p => new ProductListViewModelRow
-            {
-                Id = p.ProductId,
-                ProductCode = p.ProductCode,
-                ProductName = p.Name,
-                Price = p.Price,
-                ManafacturerName = _manafacturerRepository.GetByManafacturerId(p.ManafacturerId).Name
-            }).ToList();
-            IEnumerable<ProductListViewModelRow> orderedEnumerable = productRowList.OrderBy(p => p.ProductCode); //Sort by product code as default
-
-            if (sort.Column != null)
-                orderedEnumerable = orderedEnumerable.OrderBy(sort.Column, sort.Direction);
-
-            var productListViewModel = new ProductListViewModel
-            {
-                ProductListRows = orderedEnumerable.AsPagination(page ?? 1, 15),
-            };
-
+            var productListViewModel = new ProductListViewModel();
             return View(productListViewModel);
         }
 
         [HttpPost]
-        public ActionResult Index(GridSortOptions sort, int? page, string searchWord)
+        public ActionResult Index(string searchWord)
         {
-            
-            var manafacturerIdList = _manafacturerRepository.Search(searchWord).Select(m => m.ManafacturerId).ToList();
-            var products = _productRepository.Search(searchWord, manafacturerIdList);
-
-            ViewData["sort"] = sort;
-
-            var productRowList = products.Select(p => new ProductListViewModelRow
-            {
-                Id = p.ProductId,
-                ProductCode = p.ProductCode,
-                ProductName = p.Name,
-                Price = p.Price,
-                ManafacturerName = _manafacturerRepository.GetByManafacturerId(p.ManafacturerId).Name
-            }).ToList();
-            IEnumerable<ProductListViewModelRow> orderedEnumerable = productRowList.OrderBy(p => p.ProductCode); //Sort by product code as default
-
-            if (sort.Column != null)
-                orderedEnumerable = orderedEnumerable.OrderBy(sort.Column, sort.Direction);
-
             var productListViewModel = new ProductListViewModel
             {
-                ProductListRows = orderedEnumerable.AsPagination(page ?? 1, 15),
                 SearchWord = searchWord
             };
 
             return View(productListViewModel);
         }
 
-        //Yet to be properly implemented
+        public ActionResult Sort(string ColumnName, int? PageNum, string GridDiv, string Controller, string Direction, string GridView, string SearchWord)
+        {
+       
+            int page = PageNum ?? 1;
+            const string defaultColumn = "ProductCode";
+            string column = (ColumnName ?? defaultColumn) == "undefined" ? defaultColumn :
+                (ColumnName == String.Empty) ? defaultColumn : ColumnName;
+            
+            var direction = new SortDirection();
+            if (Direction == "ASC") direction = SortDirection.Ascending;
+            if (Direction == "DESC") direction = SortDirection.Descending;
 
+            List<Product> products;
+            if (SearchWord != "")
+            {
+                var manafacturerIdList = _manafacturerRepository.Search(SearchWord).Select(m => m.ManafacturerId).ToList();
+                products = _productRepository.Search(SearchWord, manafacturerIdList) as List<Product>;
+            }
+            else
+            {
+                products = _productRepository.List() as List<Product>;    
+            }
+
+
+            if (products != null)
+            {
+                var productRowList = products.Select(p => new ProductListViewModelRow
+                                                              {
+                                                                  Id = p.ProductId,
+                                                                  ProductCode = p.ProductCode,
+                                                                  ProductName = p.Name,
+                                                                  Price = p.Price,
+                                                                  ManafacturerName = _manafacturerRepository.GetByManafacturerId(p.ManafacturerId).Name
+                                                              }).ToList().OrderBy(column, direction).AsPagination(page, 15);
+            
+                ViewData["ProductListRows"] = productRowList;
+            }
+            ViewData["controller"] = Controller;
+            ViewData["griddiv"] = GridDiv;
+            return View(GridView);
+        }
+
+        public JavaScriptResult FlagReview(int id)
+        {
+            var script = string.Format("");
+            if (_reviewRepository.GetById(id).Flagged)
+            {
+                script = string.Format("alert('This review has already been reported to the administrators')");
+            }
+            else
+            {
+                var review = _reviewRepository.GetById(id);
+                review.Flagged = true;
+                _reviewRepository.Update(review);
+                script = string.Format("alert('Thankyou, this review has now been reported to the administrators')");
+            }
+          
+            return JavaScript(script);
+        }
     }
 }

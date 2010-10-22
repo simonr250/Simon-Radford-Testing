@@ -13,25 +13,17 @@
 <script src="/Scripts/MicrosoftAjax.js" type="text/javascript"></script>
 <script src="/Scripts/MicrosoftMvcAjax.js" type="text/javascript"></script>
 <script src="/Scripts/jquery-1.4.1.js" type="text/javascript"></script>
-<script type="text/javascript">
-	var $jq14 = jQuery.noConflict();
-</script>
+<script src ="/Scripts/jquery.mvcajax.js" type="text/javascript"></script>
 <script src="/Scripts/jquery.infinitescroll.js" type="text/javascript"></script>
 
-
 <script type ="text/javascript" >
-	$jq14(document).ready(function () {
-	/*	$jq14("table.grid").infinitescroll({
-			navSelector: "div.pagination",
-			// selector for the paged navigation (it will be hidden)
-			nextSelector: "div.pagination a:contains('next')",
-			// selector for the NEXT link (to page 2)
-			itemSelector: "table tr.gridrow, table tr.gridrow_alternate",
-			// selector for all items you'll retrieve
-			donetext: "All products displayed",
-			animate: true
-			//extraScrollPx: 200
-		}); */
+	$(document).ready(function () {
+	
+		var searchWord = '<%:Model.SearchWord%>'; 
+    
+		$("#product_grid").mvcajax("/Product/Sort/","ProductGrid", searchWord ,  {
+			defaultsort: "ProductCode"
+		});
 	});
 </script>
     <h2>Product List</h2>
@@ -47,22 +39,16 @@
     {%>
 	<p>Search results for "<%:Model.SearchWord%>"</p><%
     }%>
-
-	<%: Html.Grid<ProductListViewModelRow>("ProductListRows").Sort(ViewData["sort"] as GridSortOptions).Columns(column =>
-{
-          column.For(prod => prod.ProductCode).Named("Product Code").SortColumnName("ProductCode");
-		  column.For(prod => Html.ActionLink(prod.ProductName, "ProductDetails", new{id=prod.Id})).Named("Name").SortColumnName("ProductName");
-		  column.For(prod => prod.ManafacturerName).Named("Manafacturer").SortColumnName("ManafacturerName");
-		  column.For(prod => "£"+prod.Price).Named("Price").SortColumnName("Price");
-	})%>
-<%= Html.Pager((IPagination)Model.ProductListRows)%>
 	
+	<div id="product_grid">
+    </div>
+
 	<script type="text/javascript">
-		$jq14("tr").mouseover(function () {
-			$jq14(this).css("background-color", "#CCCCCC");
+		$("tr").mouseover(function () {
+			$(this).css("background-color", "#CCCCCC");
 		});
-		$jq14("tr").mouseleave(function () {
-			$jq14(this).css("background-color", "white");
+		$("tr").mouseleave(function () {
+			$(this).css("background-color", "white");
 
 		});
 	</script>

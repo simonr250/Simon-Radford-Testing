@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using SimonRadford.Site.Models;
@@ -15,6 +16,7 @@ namespace SimonRadford.Site.Controllers
     {
         private readonly IManafacturerRepository _manafacturerRepository = new ManafacturerRepository();
         private readonly IProductRepository _productRepository = new ProductRepository();
+        private readonly IReviewRepository _reviewRepository = new ReviewRepository();
 
         public AdminController(IManafacturerRepository manafacturerRepository, IProductRepository productRepository, 
             IReviewRepository reviewReporistory, ISubmitterRepository submitterRepository)
@@ -93,30 +95,29 @@ namespace SimonRadford.Site.Controllers
             return Redirect("/Admin/Index");
         }
 
-        public ActionResult ViewManafacturer(int id, GridSortOptions sort, int? page)
+        public ActionResult ViewManafacturer(int id)
         {
-            IList<Product> products = _productRepository.ManafacturerProductList(id);
-
-            ViewData["sort"] = sort;
-
-            var productRowList = products.Select(p => new ProductListViewModelRow
-            {
-                Id = p.ProductId,
-                ProductCode = p.ProductCode,
-                ProductName = p.Name,
-                Price = p.Price,
-            }).ToList();
-            IEnumerable<ProductListViewModelRow> sortedEnum = productRowList.OrderBy(p => p.ProductCode); //Sort by product code as default
-            if (sort.Column != null)
-                sortedEnum = sortedEnum.OrderBy(sort.Column, sort.Direction);
-
             var manafacturerViewModel = new ManafacturerViewModel
             {
                 ManafacturerId = id,
                 ManafacturerName = _manafacturerRepository.GetByManafacturerId(id).Name,
                 ManafacturerWebsite =
                     _manafacturerRepository.GetByManafacturerId(id).Website,
-                ProductListRows = sortedEnum.AsPagination(page ?? 1, 10)
+            };
+
+            return View(manafacturerViewModel);
+        }
+
+        [HttpPost]
+        public ActionResult ViewManafacturer(ManafacturerViewModel model, string searchWord)
+        {
+            var manafacturerViewModel = new ManafacturerViewModel
+                                            {
+                                                ManafacturerId = model.ManafacturerId,
+                                                ManafacturerName = _manafacturerRepository.GetByManafacturerId(model.ManafacturerId).Name,
+                                                ManafacturerWebsite =
+                                                    _manafacturerRepository.GetByManafacturerId(model.ManafacturerId).Website,
+                                                SearchWord = searchWord
             };
 
             return View(manafacturerViewModel);
@@ -151,7 +152,8 @@ namespace SimonRadford.Site.Controllers
             var productViewModel = new ProductViewModel
             {
                 ManafacturerNames = _manafacturerRepository.DistinctNamesList(),
-                ManafacturerName = _manafacturerRepository.GetByManafacturerId(id).Name
+                ManafacturerName = _manafacturerRepository.GetByManafacturerId(id).Name,
+                ManafacturerId = id
             };
             return View(productViewModel);
         }
@@ -184,7 +186,8 @@ namespace SimonRadford.Site.Controllers
                                              ManafacturerName = _manafacturerRepository.GetByManafacturerId(product.ManafacturerId).Name,
                                              ManafacturerNames = _manafacturerRepository.DistinctNamesList(),
                                              Description = product.Description,
-                                             Price = product.Price 
+                                             Price = product.Price ,
+                                             ManafacturerId = product.ManafacturerId
                                            };
             return View(editProductViewModel);
         }
@@ -203,6 +206,118 @@ namespace SimonRadford.Site.Controllers
                                      };
             _productRepository.Update(updatedProduct);
             return Redirect("/Admin/ViewManafacturer?id=" + updatedProduct.ManafacturerId);
+        }
+
+        
+        public JavaScriptResult DeleteProduct(int id)
+        {
+            var product = _productRepository.GetByProductId(id);
+            foreach (var r in _reviewRepository.List(id))
+            {
+                _reviewRepository.Remove(_reviewRepository.GetById(r.Id));
+            }
+            _productRepository.Remove(product);
+
+            var script = string.Format("DeleteRefreshGrid()");
+            return JavaScript(script);
+        }
+
+        public JavaScriptResult DeleteManafacturer(int id)
+        {
+            var products = _productRepository.ManafacturerProductList(id);
+            foreach (var product in products)
+            {
+                foreach (var review in _reviewRepository.List(product.ProductId))
+                {
+                    _reviewRepository.Remove(_reviewRepository.GetById(review.Id));
+                }
+                _productRepository.Remove(product);
+            }
+            var manafacturer = _manafacturerRepository.GetByManafacturerId(id);
+            _manafacturerRepository.Remove(manafacturer);
+            
+            var script = string.Format("DeleteRefreshGrid()");
+            return JavaScript(script);
+        }
+
+        public ActionResult SortProductList(string ColumnName, int? PageNum, string GridDiv, string Controller, string Direction, string GridView, string SearchWord, int id)
+        {
+
+            int page = PageNum ?? 1;
+            const string defaultColumn = "ProductCode";
+            string column = (ColumnName ?? defaultColumn) == "undefined" ? defaultColumn :
+                (ColumnName == String.Empty) ? defaultColumn : ColumnName;
+
+            var direction = new SortDirection();
+            if (Direction == "ASC") direction = SortDirection.Ascending;
+            if (Direction == "DESC") direction = SortDirection.Descending;
+
+            List<Product> products = new List<Product>();
+            if (SearchWord != "")
+            {
+                var manafacturerIdList = _manafacturerRepository.Search(SearchWord).Select(m => m.ManafacturerId).ToList();
+                products.AddRange(_productRepository.Search(SearchWord, manafacturerIdList).Where(p => p.ManafacturerId == id));
+            }
+            else
+            {
+                products = _productRepository.ManafacturerProductList(id) as List<Product>;
+            }
+
+
+            if (products != null)
+            {
+                var productRowList = products.Select(p => new ProductListViewModelRow
+                {
+                    Id = p.ProductId,
+                    ProductCode = p.ProductCode,
+                    ProductName = p.Name,
+                    Price = p.Price,
+                    ManafacturerName = _manafacturerRepository.GetByManafacturerId(p.ManafacturerId).Name
+                }).ToList().OrderBy(column, direction).AsPagination(page, 15);
+
+                ViewData["ProductListRows"] = productRowList;
+            }
+            ViewData["controller"] = Controller;
+            ViewData["griddiv"] = GridDiv;
+            return View(GridView);
+        }
+
+        public ActionResult SortManafacturerList(string ColumnName, int? PageNum, string GridDiv, string Controller, string Direction, string GridView, string SearchWord)
+        {
+
+            int page = PageNum ?? 1;
+            const string defaultColumn = "ManafacturerName";
+            string column = (ColumnName ?? defaultColumn) == "undefined" ? defaultColumn :
+                (ColumnName == String.Empty) ? defaultColumn : ColumnName;
+
+            var direction = new SortDirection();
+            if (Direction == "ASC") direction = SortDirection.Ascending;
+            if (Direction == "DESC") direction = SortDirection.Descending;
+
+            List<Manafacturer> manafacturers;
+            if (SearchWord != "")
+            {
+                manafacturers = _manafacturerRepository.Search(SearchWord) as List<Manafacturer>;
+            }
+            else
+            {
+                manafacturers = _manafacturerRepository.List() as List<Manafacturer>;
+            }
+
+
+            if (manafacturers != null)
+            {
+                var manafacturerRowList = manafacturers.Select(m => new ManafacturerListViewModelRow
+                {
+                    ManafacturerId = m.ManafacturerId,
+                    ManafacturerName = m.Name
+                }).ToList().OrderBy(column, direction).AsPagination(page, 15);
+
+                ViewData["ManafacturerListRows"] = manafacturerRowList;
+            }
+            ViewData["controller"] = Controller;
+            ViewData["griddiv"] = GridDiv;
+            return View(GridView);
         }
     }
 

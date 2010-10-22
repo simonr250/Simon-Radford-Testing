@@ -160,7 +160,7 @@ namespace SimonRadford.Tests.ControllerTests
         public void TestViewManafacturerDetails()
         {
             var adminController = new AdminController(_manafacturerRepository, _productRepository, _reviewRepository, _submitterRepository);
-            var result =  adminController.ViewManafacturer(1, new GridSortOptions(), 1) as ViewResult;
+            var result =  adminController.ViewManafacturer(1) as ViewResult;
             if (result != null)
             {
                 var manafacturerViewResult = (ManafacturerViewModel) result.ViewData.Model;

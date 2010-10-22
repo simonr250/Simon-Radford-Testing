@@ -14,5 +14,7 @@ namespace SimonRadford.Site.Models
 
         [Required(ErrorMessage = "Please enter your review")]
         public virtual string Detail { get; set; }
+
+        public virtual bool Flagged { get; set; }
     }
 }

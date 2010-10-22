@@ -12,6 +12,7 @@
     <property name="UserId" />
     <property name="Rating" />
     <property name="Detail" />
+		<property name="Flagged" />
   </class>
 
 </hibernate-mapping>

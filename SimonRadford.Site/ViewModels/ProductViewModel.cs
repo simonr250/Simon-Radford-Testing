@@ -67,5 +67,7 @@ namespace SimonRadford.Site.ViewModels
         public double AverageRating { get; set; }
 
         public IList<string> ManafacturerNames { get; set; }
+
+        public int ManafacturerId { get; set; } 
     }
 }
