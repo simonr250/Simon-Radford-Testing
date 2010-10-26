@@ -1,11 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<SimonRadford.Site.ViewModels.ManafacturerViewModel>" %>
-<%@ Import Namespace="MvcContrib.Pagination" %>
-<%@ Import Namespace="MvcContrib.UI.Grid" %>
-<%@ Import Namespace="MvcContrib.UI.Pager" %>
-<%@ Import Namespace="SimonRadford.Site.ViewModels" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Admin/Admin.Master" Inherits="System.Web.Mvc.ViewPage<SimonRadford.Site.ViewModels.ManafacturerViewModel>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-	ViewManafacturer
+ <h2>Manafacturer Details</h2>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -23,6 +19,9 @@
 		$("#product_grid").mvcajaxManafacturerView("/Admin/SortProductList/", "ProductGrid", searchWord, id, {
 			defaultsort: "ProductCode"
 		});
+
+		$jq14("li:contains('Manafacturers and Products')").css("border", "3px solid #990000");
+	
 	});
 
 	function DeleteRefreshGrid() {
@@ -32,8 +31,6 @@
 	}
 	
 </script>
-
-    <h2>Manafacturer Details</h2>
 
 	<p>
 	<%: Html.ActionLink( "Edit manafacturer's details", "EditManafacturer", new {id = Model.ManafacturerId}) %>

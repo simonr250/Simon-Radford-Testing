@@ -138,7 +138,8 @@ namespace SimonRadford.Site.Controllers
                                                                   ProductCode = p.ProductCode,
                                                                   ProductName = p.Name,
                                                                   Price = p.Price,
-                                                                  ManafacturerName = _manafacturerRepository.GetByManafacturerId(p.ManafacturerId).Name
+                                                                  ManafacturerName = _manafacturerRepository.GetByManafacturerId(p.ManafacturerId).Name,
+                                                                  AverageRating = _reviewRepository.GetAverageProductRating(p.ProductId)
                                                               }).ToList().OrderBy(column, direction).AsPagination(page, 15);
             
                 ViewData["ProductListRows"] = productRowList;
@@ -164,6 +165,44 @@ namespace SimonRadford.Site.Controllers
             }
           
             return JavaScript(script);
+        }
+
+        public ActionResult TopRated()
+        {
+            var productListViewModel = new ProductListViewModel();
+            return View(productListViewModel);
+        }
+
+        public ActionResult SortTopRated(string ColumnName, int? PageNum, string GridDiv, string Controller, string Direction, string GridView, string SearchWord)
+        {
+            int page = PageNum ?? 1;
+            const string defaultColumn = "AverageRating";
+            string column = (ColumnName ?? defaultColumn) == "undefined" ? defaultColumn :
+                (ColumnName == String.Empty) ? defaultColumn : ColumnName;
+
+            var direction = new SortDirection();
+            if (Direction == "ASC") direction = SortDirection.Ascending;
+            if (Direction == "DESC") direction = SortDirection.Descending;
+
+            var products = _productRepository.List().Where(product => _reviewRepository.GetAverageProductRating(product.ProductId) > 3).ToList();
+
+            if (products != null)
+            {
+                var productRowList = products.Select(p => new ProductListViewModelRow
+                {
+                    Id = p.ProductId,
+                    ProductCode = p.ProductCode,
+                    ProductName = p.Name,
+                    Price = p.Price,
+                    ManafacturerName = _manafacturerRepository.GetByManafacturerId(p.ManafacturerId).Name,
+                    AverageRating = _reviewRepository.GetAverageProductRating(p.ProductId)
+                }).ToList().OrderBy(column, direction).AsPagination(page, 15);
+
+                ViewData["ProductListRows"] = productRowList;
+            }
+            ViewData["controller"] = Controller;
+            ViewData["griddiv"] = GridDiv;
+            return View(GridView);
         }
     }
 }

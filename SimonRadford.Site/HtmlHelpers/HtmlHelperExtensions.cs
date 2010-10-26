@@ -19,6 +19,8 @@ namespace SimonRadford.Site.HtmlHelpers
             img.GenerateId(alt + "Img");
             img.MergeAttribute("src", imageRelativeUrl);
             img.MergeAttribute("alt", alt);
+            img.MergeAttribute("title", alt);
+            img.MergeAttribute("class", "actionLink");
             img.MergeAttributes(new RouteValueDictionary(imageAttributes));
             var t = new TagBuilder("a");
             t.MergeAttribute("href", u.Action(action, controller, new RouteValueDictionary(routeValues)));
@@ -32,6 +34,8 @@ namespace SimonRadford.Site.HtmlHelpers
             var builder = new TagBuilder("img");
             builder.MergeAttribute("src", imageUrl);
             builder.MergeAttribute("alt", altText);
+            builder.MergeAttribute("title", altText);
+            builder.MergeAttribute("class", "actionLink");
             var link = helper.ActionLink("[replaceme]", actionName, routeValues, ajaxOptions);
             return link.ToString().Replace("[replaceme]", builder.ToString(TagRenderMode.SelfClosing));
         }

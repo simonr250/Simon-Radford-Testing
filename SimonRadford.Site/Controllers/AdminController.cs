@@ -17,6 +17,7 @@ namespace SimonRadford.Site.Controllers
         private readonly IManafacturerRepository _manafacturerRepository = new ManafacturerRepository();
         private readonly IProductRepository _productRepository = new ProductRepository();
         private readonly IReviewRepository _reviewRepository = new ReviewRepository();
+        private readonly ISubmitterRepository _submitterRepository = new SubmitterRepository();
 
         public AdminController(IManafacturerRepository manafacturerRepository, IProductRepository productRepository, 
             IReviewRepository reviewReporistory, ISubmitterRepository submitterRepository)
@@ -137,12 +138,11 @@ namespace SimonRadford.Site.Controllers
         [HttpPost]
         public ActionResult EditManafacturer (ManafacturerViewModel model)
         {
-            var updatedManafacturer = new Manafacturer
-                                          {
-                                              ManafacturerId = model.ManafacturerId,
-                                              Name = model.ManafacturerName,
-                                              Website = model.ManafacturerWebsite
-                                          };
+            var updatedManafacturer = _manafacturerRepository.GetByManafacturerId(model.ManafacturerId);
+
+            updatedManafacturer.Name = model.ManafacturerName;
+            updatedManafacturer.Website = model.ManafacturerWebsite;
+                                          
             _manafacturerRepository.Update(updatedManafacturer);
             return Redirect("/Admin/ViewManafacturer?id=" + model.ManafacturerId);
         }
@@ -195,15 +195,15 @@ namespace SimonRadford.Site.Controllers
         [HttpPost]
         public ActionResult EditProduct(ProductViewModel model)
         {
-            var updatedProduct = new Product
-                                     {
-                                         Description = model.Description,
-                                         ManafacturerId = _manafacturerRepository.CheckExistingNamesAdd(model.ManafacturerName),
-                                         Name = model.ProductName,
-                                         Price = model.Price,
-                                         ProductCode = model.ProductCode,
-                                         ProductId = model.ProductId
-                                     };
+            var updatedProduct = _productRepository.GetByProductId(model.ProductId);
+
+            updatedProduct.Description = model.Description;
+            updatedProduct.ManafacturerId = _manafacturerRepository.CheckExistingNamesAdd(model.ManafacturerName);
+            updatedProduct.Name = model.ProductName;
+            updatedProduct.Price = model.Price;
+            updatedProduct.ProductCode = model.ProductCode;
+            updatedProduct.ProductId = model.ProductId;
+                                     
             _productRepository.Update(updatedProduct);
             return Redirect("/Admin/ViewManafacturer?id=" + updatedProduct.ManafacturerId);
         }
@@ -236,8 +236,55 @@ namespace SimonRadford.Site.Controllers
             var manafacturer = _manafacturerRepository.GetByManafacturerId(id);
             _manafacturerRepository.Remove(manafacturer);
             
-            var script = string.Format("DeleteRefreshGrid()");
+            var script = string.Format("RefreshGrid()");
             return JavaScript(script);
+        }
+
+        public JavaScriptResult DeleteReview(int id)
+        {
+            var review = _reviewRepository.GetById(id);
+            
+                _reviewRepository.Remove(review);
+
+            var script = string.Format("RefreshGrid()");
+            return JavaScript(script);
+        }
+
+        public JavaScriptResult UnflagReview(int id)
+        {
+            var review = _reviewRepository.GetById(id);
+            review.Flagged = false;
+            _reviewRepository.Update(review);
+
+            var script = string.Format("alert('Review has been unflagged');RefreshGrid()");
+            return JavaScript(script);
+        }
+
+        public ActionResult EditReview(int id)
+        {
+            var review = _reviewRepository.GetById(id);
+            var reviewViewModel = new ReviewRowModel
+                                      {
+                                          Id = review.Id,
+                                          SubmitterName = _submitterRepository.GetByUserId(review.UserId).Name,
+                                          Rating = review.Rating,
+                                          DetailedReview = review.Detail,
+                                          Flagged = review.Flagged,
+                                          Product = _productRepository.GetByProductId(review.ProductId).Name,
+                                          Manafacturer =_manafacturerRepository.GetByManafacturerId(_productRepository.GetByProductId(review.ProductId).ManafacturerId).Name
+                                      };
+            return View(reviewViewModel);
+        }
+
+        [HttpPost]
+        public ActionResult EditReview(ReviewRowModel model)
+        {
+            var updatedReview = _reviewRepository.GetById(model.Id);
+            updatedReview.UserId = _submitterRepository.CheckExistingNamesAdd(model.SubmitterName);
+            updatedReview.Detail = model.DetailedReview;
+            updatedReview.Rating = model.Rating;
+            _reviewRepository.Update(updatedReview);
+            return Redirect("/Admin/ReportedReviews");
         }
 
         public ActionResult SortProductList(string ColumnName, int? PageNum, string GridDiv, string Controller, string Direction, string GridView, string SearchWord, int id)
@@ -318,6 +365,65 @@ namespace SimonRadford.Site.Controllers
             ViewData["controller"] = Controller;
             ViewData["griddiv"] = GridDiv;
             return View(GridView);
+        }
+
+        public ActionResult SortReviewList(string ColumnName, int? PageNum, string GridDiv, string Controller, string Direction, string GridView, string SearchWord)
+        {
+
+            int page = PageNum ?? 1;
+            const string defaultColumn = "Manafacturer";
+            string column = (ColumnName ?? defaultColumn) == "undefined" ? defaultColumn :
+                (ColumnName == String.Empty) ? defaultColumn : ColumnName;
+
+            var direction = new SortDirection();
+            if (Direction == "ASC") direction = SortDirection.Ascending;
+            if (Direction == "DESC") direction = SortDirection.Descending;
+
+            IList<Review> reviews;
+            if (SearchWord != "")
+            {
+                reviews = _reviewRepository.SearchFlagged(SearchWord);
+            }
+            else
+            {
+                reviews = _reviewRepository.ListFlagged();
+            }
+
+
+            if (reviews != null)
+            {
+                var reportedReviewRowList = reviews.Select(r => new ReviewRowModel
+                {
+                    SubmitterName  = _submitterRepository.GetByUserId(r.UserId).Name,
+                    DetailedReview = r.Detail,
+                    Rating = r.Rating,
+                    Id = r.Id,
+                    Flagged = r.Flagged,
+                    Product = _productRepository.GetByProductId(r.ProductId).Name,
+                    Manafacturer = _manafacturerRepository.GetByManafacturerId(_productRepository.GetByProductId(r.ProductId).ManafacturerId).Name
+                }).ToList().OrderBy(column, direction).AsPagination(page, 15);
+
+                ViewData["ReportedReviewListRows"] = reportedReviewRowList;
+            }
+            ViewData["controller"] = Controller;
+            ViewData["griddiv"] = GridDiv;
+            return View(GridView);
+        }
+
+        public ActionResult ReportedReviews()
+        {
+            var reportedReviewsViewModel = new ReportedReviewsViewModel{};
+            return View(reportedReviewsViewModel);
+        }
+
+        [HttpPost]
+        public ActionResult ReportedReviews(string searchWord)
+        {
+            var reportedReviewsViewModel = new ReportedReviewsViewModel
+                                               {
+                                                   SearchWord = searchWord
+                                               };
+            return View(reportedReviewsViewModel);
         }
     }
 

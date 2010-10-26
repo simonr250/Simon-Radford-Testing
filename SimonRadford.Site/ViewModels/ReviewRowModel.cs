@@ -30,5 +30,8 @@ namespace SimonRadford.Site.ViewModels
 
         public int Id { get; set; }
         public bool Flagged { get; set; }
+
+        public string Product{ get; set; }
+        public string Manafacturer { get; set; }
     }
 }

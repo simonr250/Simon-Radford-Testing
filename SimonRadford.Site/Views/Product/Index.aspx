@@ -1,11 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<SimonRadford.Site.ViewModels.ProductListViewModel>" %>
-<%@ Import Namespace="MvcContrib.Pagination" %>
-<%@ Import Namespace="MvcContrib.UI.Grid" %>
-<%@ Import Namespace="MvcContrib.UI.Pager" %>
-<%@ Import Namespace="SimonRadford.Site.ViewModels" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Product/Product.Master" Inherits="System.Web.Mvc.ViewPage<SimonRadford.Site.ViewModels.ProductListViewModel>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-	Product List
+	<h2>Complete Product List</h2>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -24,9 +20,11 @@
 		$("#product_grid").mvcajax("/Product/Sort/","ProductGrid", searchWord ,  {
 			defaultsort: "ProductCode"
 		});
+
+		$jq14("li:contains('Complete Product List')").css("border", "3px solid #990000");
+	
 	});
 </script>
-    <h2>Product List</h2>
     
 	<% using(Html.BeginForm(new { Action = "Index"})) { %> 
 	<%: Html.TextBox("SearchWord") %> 

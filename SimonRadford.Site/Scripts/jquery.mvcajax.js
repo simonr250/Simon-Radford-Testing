@@ -48,7 +48,12 @@ function UpdateGrid(griddiv, controller, gridview, col, page, searchword) {
     if (mvcgridvals == null) {
         mvcgridvals = {};
         mvcgridvals["currentpage"] = 1;
-        mvcgridvals["direction"] = "ASC";
+
+		//SR - If the grid is for top rated products then sort descending by default
+        if (griddiv == "#top_rated_product_grid")
+        { mvcgridvals["direction"] = "DESC"; }
+        else { mvcgridvals["direction"] = "ASC"; }
+		//----------------------------------------------
         mvcgridvals["sortcolumn"] = col;
     }
     else {

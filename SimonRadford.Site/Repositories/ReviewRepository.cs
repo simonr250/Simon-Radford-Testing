@@ -72,5 +72,27 @@ namespace SimonRadford.Site.Repositories
             if (count>0) result = total/count;
             return result;
         }
+
+        public IList<Review> ListFlagged()
+        {
+            using (var session = NHibernateHelper.OpenSession())
+            using (session.BeginTransaction())
+            {
+                return session.CreateCriteria(typeof(Review)).Add(Restrictions.Eq("Flagged", true))
+                    .List<Review>();
+            }
+        }
+
+        public IList<Review> SearchFlagged(string word)
+        {
+            using (var session = NHibernateHelper.OpenSession())
+            {
+                var reviewSearchList = session
+                    .CreateCriteria(typeof(Product))
+                    .Add(Restrictions.Like("DetailedReview", "%" + word + "%") && Restrictions.Eq("Flagged", true) )
+                    .List<Review>();
+                return reviewSearchList;
+            }
+        }
     }
 }

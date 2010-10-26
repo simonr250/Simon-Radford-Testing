@@ -1,11 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<SimonRadford.Site.ViewModels.ProductViewModel>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Product/Product.Master" Inherits="System.Web.Mvc.ViewPage<SimonRadford.Site.ViewModels.ProductViewModel>" %>
 <%@ Import Namespace="MvcContrib.Pagination" %>
 <%@ Import Namespace="MvcContrib.UI.Grid" %>
 <%@ Import Namespace="MvcContrib.UI.Pager" %>
 <%@ Import Namespace="SimonRadford.Site.ViewModels" %>
+<%@ Import Namespace="SimonRadford.Site.HtmlHelpers" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-	Product Details for <%: Model.ProductName %>
+	<h2>Product Details for <%: Model.ProductName %></h2>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -44,11 +45,17 @@
    		$('#rate1').rating('/Home/SubmitReview/2', { maxvalue: 5 });
    		// $("table").slideDown(1000, function () { });
 
+   		/*  Formatting reviews in different colours depending on rating
+		1 = red
+		3 = amber
+		5 = green
+
    		$jq14("tr:contains('1'):contains('Report this review')").css("background-color", "#CC3333")
    		$jq14("tr:contains('2'):contains('Report this review')").css("background-color", "#FF9966")
    		$jq14("tr:contains('3'):contains('Report this review')").css("background-color", "#FFFF66")
    		$jq14("tr:contains('4'):contains('Report this review')").css("background-color", "#99FF99")
    		$jq14("tr:contains('5'):contains('Report this review')").css("background-color", "#66CC66")
+   		*/
    	});   
 	 </script>
  
@@ -95,14 +102,18 @@
        <div id="ScrollingTable">
 <%: Html.Grid<ReviewRowModel>("ReviewRows").Sort(ViewData["sort"] as GridSortOptions).Columns(column =>
    {
-          column.For(rev => rev.SubmitterName).Named("Name").SortColumnName("SubmitterName");
-		  column.For(rev => rev.Rating);
-		  column.For(rev => rev.DetailedReview).Named("Review").SortColumnName("DetailedReview");
-		  column.For(rev => Ajax.ActionLink("Report this review", "FlagReview", new { rev.Id }, new AjaxOptions())).Named("");
+	   column.For(rev => rev.SubmitterName).Named("Name").SortColumnName("SubmitterName").Attributes(width => "150px");
+	   column.For(rev => (rev.Rating == 1) ? "<Image src=\"/content/star_1.jpg\" alt =\"1\">" : (rev.Rating == 2) ? "<Image src=\"/content/star_2.jpg\" alt =\"2\">" : (rev.Rating == 3) ? "<Image src=\"/content/star_3.jpg\" alt =\"3\">" : (rev.Rating == 4) ? "<Image src=\"/content/star_4.jpg\" alt =\"4\">" : (rev.Rating == 5) ? "<Image src=\"/content/star_5.jpg\" alt =\"5\">" : rev.Rating.ToString()).Encode(false).Named("Rating").Attributes(width => "100px").HeaderAttributes(sortcolumn => "Rating");
+	   column.For(rev => rev.DetailedReview).Named("Review").SortColumnName("DetailedReview").Attributes(width => "700px");
+	   column.For(rev => (rev.Flagged == true) ? "<Image src=\"/content/reported_review.jpg\" alt =\"This review has been reported to the administrators\" title =\"This review has been reported to the administrators\" class=\"actionLink\">" : Ajax.ImageActionLink("/Content/report_review.jpg", "Report this review to an administrator", "FlagReview", new { rev.Id }, new AjaxOptions())).Named("").Attributes(width => "30px").Encode(false);
 	})%>
 	<%= Html.Pager((IPagination)Model.ReviewRows)%>
 	</div>
-    
+
+    <p>
+	<a href="#title">Back to product details</a>
+	</p>
+
 	<!-- Submit review form begins -->
 
 <%Html.EnableClientValidation();%>

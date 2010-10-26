@@ -1,0 +1,17 @@
+﻿<%@ Master Language="C#" MasterPageFile = "~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="SubMenu" runat="server">
+<script type ="text/javascript" >
+	$jq14(document).ready(function () {
+		$jq14("li:contains('Product Reviews')").css("border", "3px solid #990000");
+	});
+</script>
+<ul id="SubMenuList">
+	<li><%: Html.ActionLink("Complete Product List", "Index")%></li>
+	<li><%: Html.ActionLink("Top Rated Products", "TopRated")%></li>
+	</ul>
+	<div id = "MenuDiv"></div>
+	<asp:ContentPlaceHolder ID="TitleContent" runat="server" />
+	<asp:ContentPlaceHolder ID="MainContent" runat="server" />
+
+</asp:Content>

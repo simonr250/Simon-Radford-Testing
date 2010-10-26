@@ -14,11 +14,12 @@
 	column.For(prod => prod.ManafacturerName).Named("Manafacturer").HeaderAttributes(sortcolumn => "ManafacturerName").Attributes(width => "100px");
 	column.For(prod => "£" + prod.Price).Named("Price").HeaderAttributes(sortcolumn => "Price").Attributes(width => "40px");
 
-	column.For(prod => Ajax.ImageActionLink("/Content/Icon_delete.gif", "Delete", "DeleteProduct", new { prod.Id }, 
+	column.For(prod => Ajax.ImageActionLink("/Content/Icon_delete.gif", "Delete Product", "DeleteProduct", new { prod.Id }, 
 		new AjaxOptions{Confirm = "Are you sure you want to delete this product and all associated reviews?"
 			}))
 		.Attributes(width => "20px").Encode(false).Sortable(false);
 	})%>
+
 </div>
 <div style="width:300px;float:left;">
 <%=Html.Pager((IPagination)ViewData["ProductListRows"]) %> 

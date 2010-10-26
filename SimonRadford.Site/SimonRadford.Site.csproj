@@ -67,19 +67,36 @@
     <Compile Include="ViewModels\ProductListViewModel.cs" />
     <Compile Include="ViewModels\ProductListViewModelRow.cs" />
     <Compile Include="ViewModels\ProductViewModel.cs" />
+    <Compile Include="ViewModels\ReportedReviewsViewModel.cs" />
     <Compile Include="ViewModels\ReviewRowModel.cs" />
+    <Compile Include="Views\Shared\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\delete.gif" />
+    <Content Include="Content\edit.jpg" />
     <Content Include="Content\GridImg\ajax-loader.gif" />
     <Content Include="Content\GridImg\ASC.gif" />
     <Content Include="Content\GridImg\DESC.gif" />
     <Content Include="Content\Icon_delete.gif" />
+    <Content Include="Content\Icon_delete.jpg" />
     <Content Include="Content\main.css" />
+    <Content Include="Content\menu_divider.jpg" />
     <Content Include="Content\PRLogo1.gif" />
     <Content Include="Content\ProductDetails.css" />
     <Content Include="Content\rating.css" />
     <Content Include="Content\star.gif" />
+    <Content Include="Content\star_1.jpg" />
+    <Content Include="Content\star_2.jpg" />
+    <Content Include="Content\star_3.jpg" />
+    <Content Include="Content\star_4.jpg" />
+    <Content Include="Content\star_5.jpg" />
+    <Content Include="Content\tick.jpg" />
     <Content Include="Global.asax" />
     <EmbeddedResource Include="Mappings\Product.hbm.xml" />
     <Content Include="hibernate.cfg.xml">
@@ -102,14 +119,19 @@
     <Content Include="Views\Admin\CreateProduct.aspx" />
     <Content Include="Views\Admin\EditManafacturer.aspx" />
     <Content Include="Views\Admin\EditProduct.aspx" />
+    <Content Include="Views\Admin\EditReview.aspx" />
     <Content Include="Views\Admin\ManafacturerGrid.ascx" />
     <Content Include="Views\Admin\ProductGrid.ascx" />
+    <Content Include="Views\Admin\ReportedReviews.aspx" />
+    <Content Include="Views\Admin\ReviewGrid.ascx" />
     <Content Include="Views\Product\Index.aspx" />
     <Content Include="Views\Admin\Index.aspx" />
     <Content Include="Views\Product\ProductDetails.aspx" />
     <Content Include="Views\Admin\ViewManafacturer.aspx" />
     <Content Include="Views\Product\ProductGrid.ascx" />
+    <Content Include="Views\Product\TopRated.aspx" />
     <Content Include="Views\Shared\EditorTemplates\ReviewTemplate.ascx" />
+    <Content Include="Views\Shared\WebForm1.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -144,6 +166,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Models\ClassDiagram.cd" />
+    <None Include="Views\Admin\Admin.Master" />
+    <Content Include="Views\Product\Product.Master" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
@@ -196,6 +220,7 @@
     <Reference Include="System.Data.Linq">
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.ApplicationServices" />

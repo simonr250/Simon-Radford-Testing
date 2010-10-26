@@ -10,7 +10,7 @@
 	    {
 	        column.For(man => Html.ActionLink(man.ManafacturerName, "ViewManafacturer", new {id = man.ManafacturerId})).
 	            Named("Manafacturer Name").HeaderAttributes(sortcolumn => "ManafacturerName").Attributes(width => "200px");
-			column.For(man => Ajax.ImageActionLink("/Content/Icon_delete.gif", "Delete", "DeleteManafacturer", new { id = man.ManafacturerId },
+			column.For(man => Ajax.ImageActionLink("/Content/Icon_delete.gif", "Delete Manafacturer", "DeleteManafacturer", new { id = man.ManafacturerId },
 	new AjaxOptions
 	{
 		Confirm = "Are you sure you want to delete this manafacturer and all associated products and reviews?"

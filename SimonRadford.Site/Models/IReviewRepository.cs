@@ -10,5 +10,7 @@ namespace SimonRadford.Site.Models
         IList<Review> List(int productId);
         Review GetById(int reviewId);
         int GetAverageProductRating(int productId);
+        IList<Review> SearchFlagged(string searchWord);
+        IList<Review> ListFlagged();
     }
 }

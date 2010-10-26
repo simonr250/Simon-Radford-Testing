@@ -3,72 +3,74 @@
     <string />
     <integer />
     <boolean>
+      <setting name="livetemplates.csharp.usevar">True</setting>
       <setting name="SolutionAnalysisEnabled">False</setting>
     </boolean>
   </SettingsComponent>
   <RecentFiles>
     <RecentFiles>
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Scripts/f:jquery.infinitescroll.js" caret="10193" fromTop="36" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Product/f:ProductDetails.aspx" caret="1716" fromTop="37" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Shared/f:Site.Master" caret="963" fromTop="23" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Admin/f:AddNewManafacturer.aspx" caret="0" fromTop="0" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Admin/f:EditManafacturer.aspx" caret="0" fromTop="0" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/f:hibernate.cfg.xml" caret="475" fromTop="5" />
-      <File id="E9A3D038-9EFB-412F-8D4C-B5B0003F1A05/d:RepositoryTests/f:RepositoryTestFixture.cs" caret="3265" fromTop="25" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Content/f:main.css" caret="39486" fromTop="0" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:ViewModels/f:ProductViewModel.cs" caret="2659" fromTop="68" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Admin/f:CreateProduct.aspx" caret="2515" fromTop="40" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Product/f:ProductGrid.ascx" caret="1337" fromTop="19" />
-      <File id="E9A3D038-9EFB-412F-8D4C-B5B0003F1A05/f:hibernate.cfg.xml" caret="0" fromTop="0" />
-      <File id="E9A3D038-9EFB-412F-8D4C-B5B0003F1A05/d:ControllerTests/f:ProductControllerTestFixture.cs" caret="3593" fromTop="26" />
-      <File id="E9A3D038-9EFB-412F-8D4C-B5B0003F1A05/d:ControllerTests/f:AdminControllerTestFixture.cs" caret="7751" fromTop="31" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:ViewModels/f:ManafacturerViewModel.cs" caret="1221" fromTop="35" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Repositories/f:ProductRepository.cs" caret="1971" fromTop="35" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Repositories/f:NHibernateHelper.cs" caret="646" fromTop="25" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Repositories/f:ManafacturerRepository.cs" caret="1959" fromTop="31" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Admin/f:EditProduct.aspx" caret="0" fromTop="0" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Product/f:Index.aspx" caret="0" fromTop="0" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:ViewModels/f:ManafacturerListViewModel.cs" caret="587" fromTop="17" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Admin/f:ManafacturerGrid.ascx" caret="414" fromTop="6" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Admin/f:Index.aspx" caret="1480" fromTop="36" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Scripts/f:jquery.mvcajax.js" caret="3853" fromTop="45" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Controllers/f:ProductController.cs" caret="1498" fromTop="27" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:HtmlHelpers/f:HtmlHelperExtensions.cs" caret="1311" fromTop="26" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Admin/f:ProductGrid.ascx" caret="1374" fromTop="19" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Controllers/f:AdminController.cs" caret="11808" fromTop="49" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Admin/f:ViewManafacturer.aspx" caret="1359" fromTop="13" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:ViewModels/f:ManafacturerListViewModel.cs" caret="0" fromTop="0" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:ViewModels/f:ManafacturerViewModel.cs" caret="0" fromTop="0" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Admin/f:ProductGrid.ascx" caret="214" fromTop="3" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:ViewModels/f:ReviewRowModel.cs" caret="1186" fromTop="33" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Controllers/f:AdminController.cs" caret="11974" fromTop="31" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:ViewModels/f:ProductListViewModel.cs" caret="0" fromTop="0" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:ViewModels/f:ProductListViewModelRow.cs" caret="350" fromTop="8" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Models/f:Product.cs" caret="0" fromTop="0" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Scripts/f:jquery.mvcajax.js" caret="1854" fromTop="16" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:HtmlHelpers/f:HtmlHelperExtensions.cs" caret="1414" fromTop="28" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Controllers/f:ProductController.cs" caret="6932" fromTop="24" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Product/f:ProductGrid.ascx" caret="1078" fromTop="12" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Admin/f:AddNewManafacturer.aspx" caret="618" fromTop="11" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Admin/f:CreateProduct.aspx" caret="614" fromTop="10" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Admin/f:EditManafacturer.aspx" caret="621" fromTop="11" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Admin/f:EditProduct.aspx" caret="782" fromTop="16" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Admin/f:ViewManafacturer.aspx" caret="983" fromTop="20" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Admin/f:Admin.Master" caret="429" fromTop="8" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Admin/f:ReportedReviews.aspx" caret="1040" fromTop="19" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Admin/f:EditReview.aspx" caret="817" fromTop="15" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Product/f:TopRated.aspx" caret="1062" fromTop="22" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Product/f:ProductDetails.aspx" caret="2432" fromTop="42" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Product/f:Product.Master" caret="303" fromTop="4" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Product/f:Index.aspx" caret="1053" fromTop="22" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Admin/f:Index.aspx" caret="946" fromTop="19" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Admin/f:ManafacturerGrid.ascx" caret="808" fromTop="11" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Admin/f:ReviewGrid.ascx" caret="1993" fromTop="24" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Shared/f:WebForm1.aspx" caret="0" fromTop="0" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Shared/f:Site.Master" caret="1604" fromTop="25" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Content/f:main.css" caret="53539" fromTop="42" />
     </RecentFiles>
     <RecentEdits>
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Admin/f:ManafacturerGrid.ascx" caret="953" fromTop="16" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Admin/f:Index.aspx" caret="729" fromTop="15" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Admin/f:Index.aspx" caret="1078" fromTop="26" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Admin/f:Index.aspx" caret="1690" fromTop="46" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Controllers/f:AdminController.cs" caret="13396" fromTop="31" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Controllers/f:AdminController.cs" caret="13571" fromTop="60" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Controllers/f:AdminController.cs" caret="13396" fromTop="24" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Controllers/f:AdminController.cs" caret="13396" fromTop="36" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Controllers/f:AdminController.cs" caret="13396" fromTop="51" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Controllers/f:AdminController.cs" caret="12960" fromTop="51" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Controllers/f:AdminController.cs" caret="13382" fromTop="54" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Controllers/f:AdminController.cs" caret="12024" fromTop="29" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Admin/f:ViewManafacturer.aspx" caret="2598" fromTop="45" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Admin/f:Index.aspx" caret="973" fromTop="13" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Admin/f:ManafacturerGrid.ascx" caret="414" fromTop="6" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Admin/f:Index.aspx" caret="1480" fromTop="36" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Controllers/f:AdminController.cs" caret="675" fromTop="17" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Admin/f:ViewManafacturer.aspx" caret="1565" fromTop="32" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:HtmlHelpers/f:HtmlHelperExtensions.cs" caret="1817" fromTop="34" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:HtmlHelpers/f:HtmlHelperExtensions.cs" caret="1311" fromTop="35" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:HtmlHelpers/f:HtmlHelperExtensions.cs" caret="1311" fromTop="26" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Admin/f:ViewManafacturer.aspx" caret="1569" fromTop="26" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Controllers/f:AdminController.cs" caret="9452" fromTop="26" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Controllers/f:AdminController.cs" caret="9902" fromTop="37" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Admin/f:ProductGrid.ascx" caret="1270" fromTop="16" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Admin/f:ProductGrid.ascx" caret="327" fromTop="5" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Admin/f:ViewManafacturer.aspx" caret="673" fromTop="12" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Controllers/f:AdminController.cs" caret="11808" fromTop="55" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Admin/f:ViewManafacturer.aspx" caret="1304" fromTop="8" />
-      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Admin/f:ViewManafacturer.aspx" caret="1492" fromTop="12" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Admin/f:EditManafacturer.aspx" caret="621" fromTop="11" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Admin/f:EditProduct.aspx" caret="602" fromTop="11" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Admin/f:EditProduct.aspx" caret="782" fromTop="16" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Admin/f:Index.aspx" caret="940" fromTop="18" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Admin/f:Index.aspx" caret="943" fromTop="18" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Admin/f:ViewManafacturer.aspx" caret="983" fromTop="21" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Admin/f:ViewManafacturer.aspx" caret="983" fromTop="20" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Admin/f:ReportedReviews.aspx" caret="998" fromTop="18" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Admin/f:EditReview.aspx" caret="819" fromTop="15" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Admin/f:Admin.Master" caret="429" fromTop="8" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Admin/f:ReportedReviews.aspx" caret="1040" fromTop="19" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Admin/f:EditReview.aspx" caret="760" fromTop="13" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Product/f:Index.aspx" caret="1008" fromTop="22" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Product/f:Index.aspx" caret="1053" fromTop="22" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Product/f:TopRated.aspx" caret="1018" fromTop="22" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Product/f:TopRated.aspx" caret="1060" fromTop="22" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Shared/f:Site.Master" caret="955" fromTop="21" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Product/f:Product.Master" caret="303" fromTop="4" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Shared/f:Site.Master" caret="556" fromTop="5" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Shared/f:Site.Master" caret="2654" fromTop="56" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Content/f:main.css" caret="53129" fromTop="31" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Content/f:main.css" caret="3954" fromTop="30" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Admin/f:ReviewGrid.ascx" caret="1993" fromTop="24" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Shared/f:Site.Master" caret="1783" fromTop="28" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Shared/f:Site.Master" caret="2621" fromTop="47" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Shared/f:Site.Master" caret="2202" fromTop="38" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Shared/f:Site.Master" caret="2003" fromTop="34" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Views/d:Shared/f:Site.Master" caret="1801" fromTop="29" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Content/f:main.css" caret="53310" fromTop="38" />
+      <File id="A0DFF80D-78E2-4A59-ABB2-BB458A6DF9B2/d:Content/f:main.css" caret="53674" fromTop="52" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>
@@ -84,28 +86,28 @@
   </UnitTestRunnerNUnit>
   <CompletionStatisticsManager>
     <ItemStatistics item="Default">
-      <Item value="public" priority="6" />
-      <Item value="int" priority="5" />
-      <Item value="return" priority="3" />
-      <Item value="var" priority="11" />
-      <Item value="new" priority="17" />
+      <Item value="public" priority="16" />
+      <Item value="int" priority="7" />
+      <Item value="return" priority="7" />
+      <Item value="var" priority="19" />
+      <Item value="new" priority="25" />
       <Item value="ManafacturerViewModel`0" priority="3" />
       <Item value="ManafacturerName" priority="5" />
-      <Item value="_manafacturerRepository" priority="7" />
+      <Item value="_manafacturerRepository" priority="13" />
       <Item value="ManafacturerWebsite" priority="1" />
       <Item value="editManafacturerViewModel" priority="0" />
       <Item value="object" priority="1" />
-      <Item value="Model" priority="10" />
+      <Item value="Model" priority="11" />
       <Item value="ManafacturerId" priority="6" />
       <Item value="HttpPostAttribute`0" priority="0" />
-      <Item value="ActionResult`0" priority="2" />
+      <Item value="ActionResult`0" priority="6" />
       <Item value="Manafacturer`0" priority="5" />
-      <Item value="model" priority="13" />
+      <Item value="model" priority="20" />
       <Item value="Name" priority="1" />
       <Item value="Website" priority="0" />
-      <Item value="updatedManafacturer" priority="0" />
+      <Item value="updatedManafacturer" priority="1" />
       <Item value="Redirect`0" priority="0" />
-      <Item value="Html" priority="5" />
+      <Item value="Html" priority="8" />
       <Item value="ID" priority="0" />
       <Item value="newProduct" priority="0" />
       <Item value="ProductViewModel`0" priority="2" />
@@ -113,43 +115,43 @@
       <Item value="id" priority="3" />
       <Item value="ProductCode" priority="2" />
       <Item value="ProductRepository`0" priority="0" />
-      <Item value="_productRepository" priority="8" />
-      <Item value="product" priority="7" />
+      <Item value="_productRepository" priority="13" />
+      <Item value="product" priority="9" />
       <Item value="ProductName" priority="0" />
       <Item value="ManafacturerNames" priority="0" />
       <Item value="Description" priority="2" />
       <Item value="Price" priority="2" />
-      <Item value="View`0" priority="0" />
+      <Item value="View`0" priority="2" />
       <Item value="editProductViewModel" priority="0" />
-      <Item value="Product`0" priority="6" />
+      <Item value="Product`0" priority="7" />
       <Item value="updatedProduct" priority="0" />
       <Item value="void" priority="1" />
       <Item value="adminController" priority="0" />
       <Item value="as" priority="7" />
       <Item value="ViewResult`0" priority="2" />
       <Item value="IFilter`0" priority="0" />
-      <Item value="if" priority="8" />
+      <Item value="if" priority="10" />
       <Item value="result" priority="4" />
       <Item value="Assert`0" priority="2" />
       <Item value="editProductResult" priority="0" />
-      <Item value="RedirectResult`0" priority="2" />
+      <Item value="RedirectResult`0" priority="3" />
       <Item value="ProductViewModel" priority="0" />
       <Item value="SimonRadford" priority="0" />
       <Item value="SimonRadford.Site" priority="0" />
-      <Item value="string" priority="4" />
+      <Item value="string" priority="10" />
       <Item value="ProductListViewModel`0" priority="0" />
-      <Item value="searchWord" priority="3" />
-      <Item value="List" priority="2" />
+      <Item value="searchWord" priority="4" />
+      <Item value="List" priority="3" />
       <Item value="IList" priority="1" />
-      <Item value="else" priority="1" />
-      <Item value="products" priority="2" />
+      <Item value="else" priority="2" />
+      <Item value="products" priority="3" />
       <Item value="productListViewModel" priority="2" />
       <Item value="direction" priority="3" />
       <Item value="Direction" priority="0" />
       <Item value="MvcContrib" priority="0" />
       <Item value="Sorting" priority="0" />
       <Item value="SortDirection`0" priority="0" />
-      <Item value="IFieldControl`0" priority="0" />
+      <Item value="IFieldControl`0" priority="2" />
       <Item value="SortDirection" priority="0" />
       <Item value="Ascending" priority="0" />
       <Item value="page" priority="0" />
@@ -160,18 +162,18 @@
       <Item value="TestAttribute`0" priority="0" />
       <Item value="Pagination" priority="0" />
       <Item value="IPagination`0" priority="1" />
-      <Item value="p" priority="0" />
-      <Item value="SearchWord" priority="0" />
-      <Item value="List&lt;Product&gt;" priority="1" />
+      <Item value="p" priority="3" />
+      <Item value="SearchWord" priority="1" />
+      <Item value="List&lt;Product&gt;" priority="2" />
       <Item value="man" priority="0" />
       <Item value="m" priority="2" />
-      <Item value="foreach" priority="0" />
-      <Item value="Review`0" priority="0" />
-      <Item value="in" priority="0" />
-      <Item value="_reviewRepository" priority="2" />
-      <Item value="r" priority="0" />
+      <Item value="foreach" priority="2" />
+      <Item value="Review`0" priority="1" />
+      <Item value="in" priority="1" />
+      <Item value="_reviewRepository" priority="12" />
+      <Item value="r" priority="10" />
       <Item value="RedirectToRoute`0" priority="0" />
-      <Item value="AjaxOptions" priority="1" />
+      <Item value="AjaxOptions" priority="4" />
       <Item value="LoadingElementId" priority="0" />
       <Item value="prod" priority="0" />
       <Item value="Confirm" priority="0" />
@@ -179,46 +181,84 @@
       <Item value="ToString`0" priority="0" />
       <Item value="AcceptVerbsAttribute`0" priority="0" />
       <Item value="HttpVerbs`0" priority="0" />
-      <Item value="JavaScriptResult`0" priority="0" />
+      <Item value="JavaScriptResult`0" priority="1" />
       <Item value="JavaScript`0" priority="0" />
       <Item value="ColumnName" priority="0" />
       <Item value="PageNum" priority="0" />
+      <Item value="builder" priority="0" />
+      <Item value="HtmlHelper`0" priority="0" />
+      <Item value="HttpServerUtility`0" priority="0" />
+      <Item value="HttpUtility`0" priority="0" />
+      <Item value="UI" priority="0" />
+      <Item value="column" priority="1" />
+      <Item value="false" priority="1" />
+      <Item value="manafacturer" priority="0" />
+      <Item value="bool" priority="1" />
+      <Item value="virtual" priority="0" />
+      <Item value="review" priority="7" />
+      <Item value="true" priority="1" />
+      <Item value="Id" priority="1" />
+      <Item value="Ajax" priority="0" />
+      <Item value="AjaxOptions`0" priority="0" />
+      <Item value="script" priority="1" />
+      <Item value="this" priority="0" />
+      <Item value="Flagged" priority="2" />
+      <Item value="rev" priority="4" />
+      <Item value="MvcHtmlString`0" priority="0" />
+      <Item value="Image`0" priority="0" />
+      <Item value="ScriptReferenceCollection`0" priority="0" />
+      <Item value="VerificationReportLevel`0" priority="0" />
+      <Item value="ReviewRowModel`0" priority="5" />
+      <Item value="ReportedReviewsViewModel`0" priority="0" />
+      <Item value="reportedReviewsViewModel" priority="0" />
+      <Item value="reviews" priority="0" />
+      <Item value="SubmitterName" priority="1" />
+      <Item value="_submitterRepository" priority="2" />
+      <Item value="DetailedReview" priority="1" />
+      <Item value="Rating" priority="1" />
+      <Item value="ProductManafacturer" priority="1" />
+      <Item value="null" priority="0" />
+      <Item value="reviewViewModel" priority="0" />
+      <Item value="updatedReview" priority="3" />
+      <Item value="AverageRating" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:SimonRadford.Site.Models.IManafacturerRepository">
-      <Item value="GetByManafacturerId`0" priority="3" />
+      <Item value="GetByManafacturerId`0" priority="6" />
       <Item value="Update`0" priority="0" />
       <Item value="DistinctNamesList`0" priority="0" />
+      <Item value="Remove`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:SimonRadford.Site.Models.Manafacturer">
-      <Item value="Name" priority="3" />
-      <Item value="Website" priority="0" />
+      <Item value="Name" priority="5" />
+      <Item value="Website" priority="1" />
       <Item value="ManafacturerId" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:SimonRadford.Site.ViewModels.ManafacturerViewModel">
-      <Item value="ManafacturerId" priority="13" />
+      <Item value="ManafacturerId" priority="14" />
       <Item value="ManafacturerName" priority="0" />
       <Item value="ManafacturerWebsite" priority="1" />
       <Item value="SearchWord" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Web.Mvc.HtmlHelper`1">
-      <Item value="ActionLink`0" priority="1" />
-      <Item value="HiddenFor`2" priority="2" />
+      <Item value="ActionLink`0" priority="2" />
+      <Item value="HiddenFor`2" priority="3" />
       <Item value="ActionImage`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:SimonRadford.Site.Models.Product">
-      <Item value="ManafacturerId" priority="3" />
+      <Item value="ManafacturerId" priority="4" />
       <Item value="ProductCode" priority="0" />
-      <Item value="Name" priority="0" />
+      <Item value="Name" priority="1" />
       <Item value="Description" priority="0" />
       <Item value="Price" priority="0" />
       <Item value="Reviews" priority="0" />
+      <Item value="ProductId" priority="2" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:SimonRadford.Site.Models.IProductRepository">
       <Item value="GetByProductName`0" priority="0" />
-      <Item value="GetByProductId`0" priority="1" />
+      <Item value="GetByProductId`0" priority="4" />
       <Item value="Update`0" priority="0" />
       <Item value="List`0" priority="1" />
-      <Item value="ManafacturerProductList`0" priority="0" />
+      <Item value="ManafacturerProductList`0" priority="2" />
       <Item value="Remove`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:SimonRadford.Site.ViewModels.ProductViewModel">
@@ -226,7 +266,7 @@
       <Item value="ProductName" priority="0" />
       <Item value="Price" priority="0" />
       <Item value="ProductCode" priority="1" />
-      <Item value="ProductId" priority="1" />
+      <Item value="ProductId" priority="2" />
       <Item value="ManafacturerName" priority="1" />
       <Item value="ManafacturerId" priority="1" />
     </ItemStatistics>
@@ -250,7 +290,9 @@
     <ItemStatistics item="Qualified:MvcContrib.UI.Grid.IGridColumn`1">
       <Item value="HeaderAttributes`0" priority="0" />
       <Item value="Attributes`0" priority="0" />
-      <Item value="Named`0" priority="0" />
+      <Item value="Named`0" priority="1" />
+      <Item value="Encode`0" priority="2" />
+      <Item value="Sortable`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:MvcContrib.UI.Pager.Pager">
       <Item value="Link`0" priority="0" />
@@ -276,30 +318,77 @@
       <Item value="Id" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Collections.Generic.List`1">
-      <Item value="Add`0" priority="0" />
+      <Item value="Add`0" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:SimonRadford.Site.ViewModels.ManafacturerListViewModelRow">
       <Item value="ManafacturerName" priority="1" />
-      <Item value="ManafacturerId" priority="0" />
+      <Item value="ManafacturerId" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:SimonRadford.Site.Models.IReviewRepository">
       <Item value="Remove`0" priority="0" />
-      <Item value="GetById`0" priority="0" />
+      <Item value="GetById`0" priority="6" />
+      <Item value="Update`0" priority="1" />
+      <Item value="GetAverageProductRating`0" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:SimonRadford.Site.Models.Review">
-      <Item value="Id" priority="0" />
+      <Item value="Id" priority="3" />
+      <Item value="Flagged" priority="5" />
+      <Item value="UserId" priority="2" />
+      <Item value="Detail" priority="2" />
+      <Item value="Rating" priority="2" />
+      <Item value="ProductId" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Int32">
-      <Item value="ToString`0" priority="0" />
+      <Item value="ToString`0" priority="3" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Web.Mvc.MvcHtmlString">
-      <Item value="ToString`0" priority="1" />
+      <Item value="ToString`0" priority="5" />
+      <Item value="ToHtmlString`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.Web.Mvc.HttpVerbs">
       <Item value="Post" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.String">
-      <Item value="Format`0" priority="0" />
+      <Item value="Format`0" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.Mvc.AjaxHelper`1">
+      <Item value="ImageActionLink`0" priority="0" />
+      <Item value="ActionLink`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.Mvc.TagBuilder">
+      <Item value="SetInnerText`0" priority="0" />
+      <Item value="ToString`0" priority="2" />
+      <Item value="InnerHtml" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Web.Mvc.TagRenderMode">
+      <Item value="Normal" priority="0" />
+      <Item value="StartTag" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Web.HttpUtility">
+      <Item value="HtmlEncode`0" priority="0" />
+      <Item value="HtmlAttributeEncode`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:MvcContrib.UI.Grid.ColumnBuilder`1">
+      <Item value="For`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:SimonRadford.Site.ViewModels.ReviewRowModel">
+      <Item value="Id" priority="3" />
+      <Item value="Flagged" priority="1" />
+      <Item value="Rating" priority="5" />
+      <Item value="ProductManafacturer" priority="1" />
+      <Item value="DetailedReview" priority="0" />
+      <Item value="SubmitterName" priority="0" />
+      <Item value="Manafacturer" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:SimonRadford.Site.Models.ISubmitterRepository">
+      <Item value="GetByUserId`0" priority="1" />
+      <Item value="CheckExistingNamesAdd`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:SimonRadford.Site.Models.Submitter">
+      <Item value="Name" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@NHibernate.Criterion.Restrictions">
+      <Item value="Eq`0" priority="0" />
     </ItemStatistics>
   </CompletionStatisticsManager>
 </Configuration>

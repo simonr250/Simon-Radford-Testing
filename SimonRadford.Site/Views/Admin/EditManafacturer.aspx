@@ -1,7 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<SimonRadford.Site.ViewModels.ManafacturerViewModel>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Admin/Admin.Master" Inherits="System.Web.Mvc.ViewPage<SimonRadford.Site.ViewModels.ManafacturerViewModel>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-	Edit Manafacturer Details
+	<h2>Edit Manafacturer Details</h2>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -9,6 +9,12 @@
 <script src="/Scripts/MicrosoftAjax.js" type="text/javascript"></script>
 <script src="/Scripts/MicrosoftMvcAjax.js" type="text/javascript"></script>
 <script src="/Scripts/MicrosoftMvcValidation.js" type="text/javascript"></script>
+
+<script type ="text/javascript" >
+	$jq14(document).ready(function () {
+		$jq14("li:contains('Manafacturers and Products')").css("border", "3px solid #990000");
+	});
+</script>
 
 <% Html.EnableClientValidation(); %>
     <% using (Html.BeginForm()) {%>
